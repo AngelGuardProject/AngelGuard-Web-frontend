@@ -13,3 +13,5 @@ In the project directory, you can run:
 ### `npm i` or `npm install`
 
 실행 전 모듈 인스톨
+
+### 이미지 파일은 public 에 보관 후 사용
