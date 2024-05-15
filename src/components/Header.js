@@ -8,17 +8,17 @@ function Header() {
                 <nav className="menu">
                     <ul>
                         <li>
-                            <a href="#" className="menu-item">
+                            <a href="#" id="menu-item">
                                 community
                             </a>
                         </li>
                         <li>
-                            <a href="#" className="menu-item">
+                            <a href="#" id="menu-item">
                                 signup
                             </a>
                         </li>
                         <li>
-                            <a href="#" className="menu-item2">
+                            <a href="#" id="menu-item2">
                                 login
                             </a>
                         </li>

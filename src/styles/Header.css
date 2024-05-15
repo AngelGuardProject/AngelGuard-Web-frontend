@@ -30,7 +30,7 @@
     display: flex;
 }
 
-.menu-item {
+#menu-item {
     margin-right: 67px;
     font-size: 20px;
     color: #666662;
@@ -38,7 +38,7 @@
     text-decoration: none;
 }
 
-.menu-item2 {
+#menu-item2 {
     margin-right: 20px;
     font-size: 20px;
     color: #666662;

@@ -6,7 +6,6 @@ footer {
 
 .footer-menu {
     height: 56px;
-
     background: #666662;
     border-bottom: 1px solid #fff4d6;
     display: flex;
@@ -38,6 +37,7 @@ footer {
 }
 
 .company-name {
+    text-align: left;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
@@ -46,6 +46,7 @@ footer {
 }
 
 .detail {
+    text-align: left;
     margin-top: 10px;
     font-weight: 500;
     font-size: 13px;
@@ -102,6 +103,7 @@ footer {
 }
 
 .hours {
+    text-align: left;
     margin-bottom: 3px;
     margin-top: 16px;
     font-weight: 400;
