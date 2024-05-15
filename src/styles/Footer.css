@@ -1,0 +1,127 @@
+footer {
+    height: 281px;
+    background: #666662;
+    box-sizing: border-box;
+}
+
+.footer-menu {
+    height: 56px;
+
+    background: #666662;
+    border-bottom: 1px solid #fff4d6;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item {
+    margin: 0 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff4d6;
+}
+
+.menu-separator {
+    color: #fff4d6;
+    margin: 0 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.company-info {
+    margin-top: 48px;
+    color: #b7b09e;
+}
+
+.company-name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff4d6;
+    margin-bottom: 10px;
+}
+
+.detail {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.separator {
+    margin: 0 20px;
+}
+
+.sns-icons {
+    margin-top: 35px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-right: 38px;
+}
+
+.customer-service {
+    margin-right: 5px; /*1:1문의하기 버튼 박스 오른쪽 선이 애매하게 안 보여서 */
+    margin-top: 48px;
+    color: #fff4d6;
+}
+
+.customer-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    margin-right: 10px;
+}
+
+.inquiry-button {
+    width: 80px;
+    height: 24px;
+    border: 1px solid #fff4d6;
+    background: transparent;
+    color: #fff4d6;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.hours {
+    margin-bottom: 3px;
+    margin-top: 16px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #b7b09e;
+}
+
+.checkbox {
+    width: 13px;
+    height: 13px;
+    margin-left: 5px;
+    background: #d9d9d9;
+    border: 1px solid #b7b09e;
+}
