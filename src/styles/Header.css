@@ -1,18 +1,11 @@
-header {
-    transition: background-color 0.3s ease; /* 부드러운 전환 효과를 위한 transition 속성 */
-
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* 다른 콘텐츠 위에 표시하기 위해 z-index 설정 */
-}
-
-#header-container.scrolled {
-    background-color: rgba(255, 244, 214, 0.284); /* 스크롤시 반 투명한 배경색 */
+@font-face {
+    font-family: "SUITE-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
 }
 
 #header-container {
-    position: fixed;
     height: 80px;
     background-color: #fff4d6;
     display: flex;
@@ -21,8 +14,8 @@ header {
 }
 
 .logo {
-    margin-left: 40px;
-    font-weight: 400;
+    margin-left: 20px;
+    font-weight: bold;
     font-size: 40px;
     color: #666662;
 }
