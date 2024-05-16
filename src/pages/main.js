@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import "../styles/main.css";
 import Header from "../components/Header";
+import { useEffect, useState } from "react";
 function Main() {
     return (
         <div>
@@ -86,11 +87,11 @@ function Main() {
                     </div>
                     <div id="body-input-container">
                         <div className="body-input">
-                            <input type="text" />
+                            <input className="body-input" type="text" />
                             cm
                         </div>
                         <div>
-                            <input type="text" />
+                            <input className="body-input" type="text" />
                             kg
                         </div>
                     </div>
