@@ -181,7 +181,7 @@ body {
     margin-right: 99px; /* input 사이의 간격 */
 }
 
-.body-input[type="text"] {
+input[type="text"] {
     width: 45px;
     border: none;
     border-bottom: 2px solid #d9d9d9;
