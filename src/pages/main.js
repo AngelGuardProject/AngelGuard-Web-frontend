@@ -92,12 +92,12 @@ function Main() {
                         <img src={require("../assets/kg.png")} alt="" />
                     </div>
                     <div id={style.bodyInputContainer}>
-                        <div className={style.bodyInput}>
-                            <input type="text" />
+                        <div className={style.bodyInputBox}>
+                            <input className={style.bodyInput} type="text" />
                             cm
                         </div>
                         <div>
-                            <input type="text" />
+                            <input className={style.bodyInput} type="text" />
                             kg
                         </div>
                     </div>

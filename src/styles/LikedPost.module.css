@@ -1,27 +1,25 @@
 .contentTitle {
+    margin: 20px 20px 0 20px;
     position: absolute;
     top: 0;
     left: 0;
-    margin-top: 22px;
-    margin-left: 30px;
+    margin: 20px;
     font-size: 24px;
     font-weight: 700;
     color: #000000;
 }
-
 .postInfo {
     display: flex;
     justify-content: space-between;
 }
 
 .totalPostsBox {
+    margin-bottom: 45px;
     margin-right: 600px;
-    margin-bottom: 20px;
     color: #666662;
 }
 
 .postList {
-    margin-top: 10px;
     width: 706px;
     height: 376px;
 }

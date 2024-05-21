@@ -83,7 +83,7 @@ body {
     text-align: left;
 }
 
-.inputInfo input {
+.input {
     margin-bottom: 15px;
     width: 416px;
     height: 29.5px;
@@ -96,13 +96,13 @@ body {
     padding-left: 10px;
 }
 
-.inputInfo input:focus {
+.input:focus {
     border: none;
     border-bottom: 2px solid #d9d9d9;
     outline: none;
 }
 
-.inputInfo input::placeholder {
+.input::placeholder {
     color: #666662;
     font-size: 16px;
     font-weight: 300;
