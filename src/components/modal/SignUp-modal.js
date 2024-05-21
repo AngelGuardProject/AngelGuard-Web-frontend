@@ -1,6 +1,6 @@
 import style from "../../styles/SignUp.module.css";
 
-function SignUp() {
+function SignUp({closeModal}) {
   return (
     <div className={style.background}>
       <div className={style.loginWrap}>
@@ -8,6 +8,9 @@ function SignUp() {
           <div className={style.logo}>AngelGuard</div>
         </div>
         <div className={style.right}>
+          <div onClick={closeModal} className={style.XBtn}>
+            <img src={require("../../assets/X.png")} />
+          </div>
           <div className={style.loginForm}>
             <div className={style.loginTitle}>SignUp</div>
             <div style={{marginBottom: "26px"}}>
