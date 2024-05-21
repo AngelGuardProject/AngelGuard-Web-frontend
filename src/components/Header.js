@@ -1,10 +1,12 @@
 import "../styles/Header.css";
 import Login from "./modal/Login-modal";
+import SignUp from "./modal/SignUp-modal";
+
 function Header() {
   //메인 헤더
   return (
     <div>
-      {<Login />}
+      {<SignUp />}
       <header id="header-container">
         <div className="logo">AngelGuard</div>
         <nav className="menu">
