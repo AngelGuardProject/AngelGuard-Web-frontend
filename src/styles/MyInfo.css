@@ -1,0 +1,128 @@
+@font-face {
+    font-family: "SUITE-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "SUITE-Regular";
+}
+#mypage-container {
+    margin-top: 15px;
+    margin-bottom: 69px;
+    margin-left: 88px;
+    margin-right: 88px;
+}
+#mypage-title {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #666662;
+    margin-bottom: 15px;
+    text-align: center;
+    margin-right: 875px;
+}
+#container {
+    display: flex; /* 페이지 내의 요소를 수직으로 정렬하기 위해 flex 사용 */
+    justify-content: center; /* 페이지 내의 요소를 가로로 가운데 정렬 */
+}
+#content {
+    position: relative;
+    width: 782px;
+    height: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.content-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.myinfo {
+    margin-top: 55px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 내부 요소 수직 정렬 */
+}
+
+.profiles {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profiles img {
+    width: 110px;
+    height: 110px;
+}
+
+.input-title {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.input-info input {
+    margin-bottom: 15px;
+    width: 416px;
+    height: 29.5px;
+    border: none;
+    border-bottom: 2px solid #d9d9d9;
+    font-size: 16px;
+    font-weight: 300;
+    color: #666662;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.input-info input:focus {
+    border: none; /* 포커스 시 기본 보더 제거 */
+    border-bottom: 2px solid #d9d9d9; /* 포커스 시 하단 보더 색상 변경 */
+    outline: none; /* 포커스 시 생기는 아웃라인 제거 */
+}
+.input-info input::placeholder {
+    color: #666662;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.btn-box {
+    width: 436px;
+    margin-top: 10px;
+}
+.btn {
+    width: 200px;
+    height: 43px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.edit {
+    margin-right: 36px;
+    background-color: #fff4d6;
+    border: none;
+}
+.cancle {
+    background-color: #ffffff;
+    border: 1px solid #a6a6a6;
+}
+.myinfo-name {
+    margin-top: 12px;
+    font-size: 20px;
+    font-weight: 400;
+}

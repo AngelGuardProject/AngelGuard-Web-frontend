@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 import Footer from "../components/Footer";
 import "../styles/main.css";
 import Header from "../components/Header";
+
 function Main() {
+    const productSectionRef = useRef(null);
+
+    const scrollToProductSection = () => {
+        productSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
         <div>
             <Header />
@@ -20,12 +27,12 @@ function Main() {
                 <div id="connect-text">
                     <div className="connect-text">AngelGuard Product</div>
                     <div>
-                        <img src={require("../assets/next.png")} alt="next" />
+                        <img src={require("../assets/next.png")} alt="next" onClick={scrollToProductSection} style={{ cursor: "pointer" }} />
                     </div>
                 </div>
             </section>
 
-            <section id="product-section">
+            <section id="product-section" ref={productSectionRef}>
                 <div className="sub-text">우리의 모든 서비스는 하나의 어플과 장난감 모빌 안에서 누릴 수 있습니다.</div>
                 <div className="product-container">
                     <div className="product-item">

@@ -24,6 +24,7 @@ body {
 }
 
 .main-img {
+    margin-top: 20px;
     width: 553px;
     height: 553px;
 }
@@ -57,6 +58,8 @@ body {
 }
 
 #product-section {
+    padding: 20px;
+    height: 700px;
     text-align: center;
 }
 
