@@ -32,17 +32,18 @@ body {
 }
 
 .contentTitle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
     font-size: 24px;
     font-weight: 700;
     color: #000000;
-    margin-top: 19px;
-    margin-bottom: 19px;
-    text-align: left;
-    margin-right: 600px;
 }
 
 .plusBaby {
     text-align: center;
+    margin-top: 60px;
     margin-bottom: 60px;
     font-size: 20px;
     font-weight: 400;
@@ -64,11 +65,11 @@ body {
 }
 
 .babyList {
-    margin-bottom: 200px;
+    margin-bottom: 320px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .babyName {

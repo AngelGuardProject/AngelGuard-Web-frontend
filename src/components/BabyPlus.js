@@ -4,14 +4,13 @@ function BabyPlus() {
     return (
         <div>
             <div className={style.contentTitle}>아기 정보 등록</div>
-            <div className={style.babyinfo}>
-                <div className={style.babyInput}>
+            <div className={style.babyInfoContainer}>
+                <div className={`${style.babyInput} ${style.babyGenderBox}`}>
                     <div className={style.babyTitle}>아이 이름</div>
                     <div>
                         <input className={style.babyNameInput} type="text" placeholder="오주희" />
                     </div>
                 </div>
-
                 <div className={`${style.babyInput} ${style.babyBirthBox}`}>
                     <div className={style.babyTitle}>아이 생년월일</div>
                     <div className={style.babyBirth}>
@@ -35,18 +34,22 @@ function BabyPlus() {
                     <div className={style.babyTitle}>아이 신체정보</div>
                     <div className={style.babyBody}>
                         <label className={style.bodyLabel}>키</label>
-                        <input id={style.bodyInputHeight} type="text" placeholder="160" />
+                        <input className={style.bodyInputHeight} type="text" placeholder="160" />
                         <label className={style.bodyLabelCm}>cm</label>
 
                         <label className={style.bodyLabel}>몸무게</label>
-                        <input id={style.bodyInputWeight} type="text" placeholder="50" />
+                        <input className={style.bodyInputWeight} type="text" placeholder="50" />
                         <label>kg</label>
                     </div>
                 </div>
 
                 <div className={style.btnBox}>
-                    <button className={`${style.btn} ${style.edit}`}>등록</button>
-                    <button className={`${style.btn} ${style.cancel}`}>취소</button>
+                    <button className={style.btn} id={style.edit}>
+                        등록
+                    </button>
+                    <button className={style.btn} id={style.cancle}>
+                        취소
+                    </button>
                 </div>
             </div>
         </div>
