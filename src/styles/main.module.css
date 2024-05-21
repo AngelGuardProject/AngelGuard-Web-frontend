@@ -4,226 +4,260 @@
     font-weight: 400;
     font-style: normal;
 }
-
-html {
-    padding: 0;
-    margin: 0;
-}
-
+html,
 body {
+    margin: 0;
+    padding: 0;
     font-family: "SUITE-Regular";
 }
 
-#mypage-container {
-    margin-top: 15px;
-    margin-bottom: 69px;
-    margin-left: 88px;
-    margin-right: 88px;
+#mainSection {
+    height: 720px;
+    background-color: #fff4d6;
 }
 
-#mypage-title {
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: 5px;
+.textContainer {
+    justify-content: center;
+    align-items: center;
+    display: flex;
     color: #666662;
-    margin-bottom: 15px;
+}
+
+.mainImg {
+    margin-top: 20px;
+    width: 553px;
+    height: 553px;
+}
+
+.mainText {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.smallText {
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.mainSub {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+#connectText {
+    margin-top: 20px;
     text-align: center;
-    margin-right: 875px;
 }
 
-#container {
-    display: flex;
-    justify-content: center;
-}
-
-#content {
-    text-align: center;
-    position: relative;
-    width: 782px;
-    height: 600px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
-}
-
-.contentTitle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 20px;
-    font-size: 24px;
-    font-weight: 700;
-    color: #000000;
-}
-
-.babyInfo {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.babyInfo {
+.connectText {
+    color: #666662;
+    font-size: 40px;
+    font-weight: 900;
     margin-bottom: 20px;
 }
 
-.baby-title {
-    margin-bottom: 21px;
-    color: #000000;
-    font-size: 20px;
-    font-weight: 400;
-    text-align: left;
-}
-
-.baby-name-input {
-    margin-bottom: 15px;
-    width: 446px;
-    height: 30px;
-    border: none;
-    border-bottom: 2px solid #d9d9d9;
-    font-size: 16px;
-    font-weight: 300;
-    color: #666662;
-    padding-top: 10px;
-    padding-left: 10px;
-}
-
-input:focus {
-    border: none;
-    border-bottom: 2px solid #d9d9d9;
-    outline: none;
-}
-
-input::placeholder {
-    color: #666662;
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.baby-birth input {
+#proudctSection {
+    padding: 20px;
+    height: 700px;
     text-align: center;
-    border: none;
-    border-bottom: 2px solid #d9d9d9;
-    font-size: 16px;
-    font-weight: 300;
+}
+
+.subText {
     color: #666662;
-    padding-top: 10px;
-    padding-left: 10px;
-    margin-right: 5px;
+    margin: 50px;
+    font-size: 20px;
+    font-weight: 500;
 }
 
-.baby-birth-box {
-    margin-left: 63px;
+.productContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.productItem {
+    margin: 0 10px;
+    display: flex;
 }
 
-.baby-birth label {
-    font-size: 16px;
-    font-weight: 300;
-    color: #666662;
-    margin-right: 56px;
+.productItem img {
+    width: 125px;
+    height: 123px;
+    margin-right: 10px;
 }
 
-.baby-birth-year {
+.productItem .productDescription {
+    display: flex;
+    flex-direction: column; /* 요소들을 세로로 정렬하기 위해 column으로 설정 */
     margin-left: 10px;
-    width: 112px;
+    margin-top: 30px;
 }
 
-.baby-birth-month {
-    width: 60px;
+.productItem .productTitle,
+.productItem .productDep {
+    white-space: nowrap;
+    text-align: left; /* 텍스트를 왼쪽으로 정렬합니다. */
 }
 
-.baby-gender {
-    margin-left: 25px;
+.productItem .productDep {
+    margin-top: 5px;
 }
 
-.baby-gender input {
-    margin-left: 8px;
-    margin-top: 10px;
-    width: 21px;
-    height: 17px;
+.product-container {
+    display: flex;
+    justify-content: center; /* 내부 요소들을 수평으로 가운데 정렬하기 위한 flexbox의 justify-content 속성 설정 */
+}
+#productContainer {
+    margin-top: 110px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center; /* 내부 요소들을 수평으로 가운데 정렬하기 위한 flexbox의 justify-content 속성 설정 */
 }
 
-.baby-body-box {
-    width: 460px;
+#productContainer img {
+    margin-right: 30px;
+    width: 360px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.baby-gender-box {
-    text-align: left;
-    width: 460px;
+.product2Dep {
+    text-align: center; /* 부모 요소를 수평 가운데 정렬 */
+    background-color: #fff4d6; /* 배경색 지정 */
+    width: 360px; /* 너비 지정 */
+    height: 300px; /* 높이 지정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.baby-gender label {
-    margin-right: 87px;
-}
-
-.baby-body .body-label {
-    margin-right: 13px;
-    margin-left: 5px;
-    font-size: 16px;
-    font-weight: 400;
-    color: #000000;
-}
-
-.baby-body {
-    margin-left: 25px;
-    text-align: left;
-}
-
-.baby-body input {
-    width: 45px;
-    height: 30px;
-    border: none;
-    border-bottom: 2px solid #d9d9d9;
-    font-size: 16px;
-    font-weight: 300;
+.productTxt,
+.productTxt2 {
+    text-align: left; /* 텍스트를 왼쪽으로 정렬 */
+    margin-top: 25px;
+    font-weight: 900;
     color: #666662;
-    padding-top: 10px;
-    padding-left: 10px;
-    margin-right: 5px;
+}
+
+.productTxt {
+    font-size: 30px;
+}
+
+.productTxt2 {
+    line-height: 1.8;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#main3Section {
+    padding-top: 150px;
+    height: 510px;
+    display: flex;
+    justify-content: center;
     text-align: center;
 }
 
-.baby-body input + label {
-    margin-left: 16px;
-    color: #666662;
+.bodyImg img {
+    margin-right: 50px;
+    width: 118px;
+    height: 111px;
 }
 
-.body-label-cm {
-    margin-right: 87px;
+.bodyInputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bodyDepContainer {
+    margin-top: 25px;
+}
+#bodyInputContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* 위쪽 여백 추가 */
+}
+.bodyInput {
+    margin-left: 50px;
+}
+#bodyInputContainer div {
+    margin-right: 99px; /* input 사이의 간격 */
 }
 
-#body-input {
-    color: #666662;
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.btn-box {
-    width: 468px;
-    margin-top: 15px;
-}
-
-.btn {
-    width: 200px;
-    height: 43px;
-    font-size: 20px;
-    border-radius: 10px;
-}
-
-.edit {
-    margin-right: 40px;
-    background-color: #fff4d6;
+input[type="text"] {
+    width: 45px;
     border: none;
+    border-bottom: 2px solid #d9d9d9;
+    outline: none; /* 포커스시 생기는 외곽선 제거 */
+    padding: 0 5px; /* 내용과 테두리 사이 여백 */
+}
+.bodyBtn {
+    margin-right: 45px;
+}
+.bodyBtn button {
+    width: 165px;
+    height: 45px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    color: #666662;
+    border: 2px solid #d9d9d9;
+    border-radius: 20px;
 }
 
-.cancle {
-    background-color: #ffffff;
-    border: 1px solid #a6a6a6;
+.depTitle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 00;
 }
-#radio[type="radio"]:checked + label::before {
-    background-color: black;
+
+.depSub2 {
+    margin-top: 17px;
+    font-size: 16px;
+    margin-left: 3px;
+    color: #666662;
+}
+
+.depContainer {
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: left;
+    color: #9c9c9c;
+    line-height: 23px;
+}
+.depContainer div {
+    color: black;
+}
+#main4Section {
+    height: 596px;
+    text-align: center;
+}
+#main4Section img {
+    width: 100px;
+    height: 100px;
+}
+
+.main4Title {
+    margin-top: 15px;
+    font-size: 40px;
+    font-weight: 600; /*bold는 700 Light 300 Regular 400 semi Bold 600 Heavy 900 */
+    color: #666662;
+}
+
+.main4Sub {
+    margin-top: 15px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #666662;
+}
+.main4Sub2 {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #666662;
 }
