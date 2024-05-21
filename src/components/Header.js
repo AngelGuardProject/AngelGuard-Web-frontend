@@ -1,22 +1,10 @@
 import "../styles/Header.css";
+import Login from "./modal/Login-modal";
 function Header() {
   //메인 헤더
   return (
     <div>
-      <div className="background">
-        <div className="login-wrap">
-          <div className="left">
-            <div>AngelGuard</div>
-          </div>
-          <div className="right">
-            <div>
-              <div>Login</div>
-              <input className="id" />
-              <input className="pw" />
-            </div>
-          </div>
-        </div>
-      </div>
+      {<Login />}
       <header id="header-container">
         <div className="logo">AngelGuard</div>
         <nav className="menu">
