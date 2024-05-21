@@ -41,14 +41,19 @@
 
 .right {
   align-items: center;
-  display: flex;
   justify-content: center;
+}
+
+.XBtn {
+  margin-left: 449px;
+  margin-top: 30px;
 }
 
 .loginForm {
   width: 400px;
   height: 351px;
   margin-left: 50px;
+  margin-top: 98px;
 }
 
 .loginTitle {

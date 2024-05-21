@@ -1,6 +1,6 @@
 import style from "../../styles/Login.module.css";
 
-function Login() {
+function Login({closeModal}) {
   return (
     <div className={style.background}>
       <div className={style.loginWrap}>
@@ -8,6 +8,9 @@ function Login() {
           <div className={style.logo}>AngelGuard</div>
         </div>
         <div className={style.right}>
+          <div onClick={closeModal} className={style.XBtn}>
+            <img src={require("../../assets/X.png")} />
+          </div>
           <div className={style.loginForm}>
             <div className={style.loginTitle}>Login</div>
             <input className={style.id} placeholder="아이디를 입력해주세요." />
