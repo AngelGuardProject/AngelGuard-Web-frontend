@@ -1,35 +1,36 @@
-import "../styles/MyInfo.css";
+import React from "react";
+import style from "../styles/MyInfo.module.css";
 
 function MyInfo() {
     return (
         <div>
-            <div className="content-title">내 정보 수정</div>
-            <div className="myinfo">
-                <div className="profiles">
+            <div className={style.contentTitle}>내 정보 수정</div>
+            <div className={style.myInfo}>
+                <div className={style.profiles}>
                     <img src={require("../assets/mypage.png")} alt="" />
-                    <div className="myinfo-name">혜림맘</div>
+                    <div className={style.myInfoName}>혜림맘</div>
                 </div>
-                <div className="input-info">
-                    <div className="input-title">닉네임</div>
+                <div className={style.inputInfo}>
+                    <div className={style.inputTitle}>닉네임</div>
                     <div>
-                        <input className="input" type="text" placeholder="혜림맘" />
+                        <input className={style.input} type="text" placeholder="혜림맘" />
                     </div>
                 </div>
-                <div className="input-info">
-                    <div className="input-title">아이디</div>
+                <div className={style.inputInfo}>
+                    <div className={style.inputTitle}>아이디</div>
                     <div>
-                        <input className="input" type="text" placeholder="yabvei" />
+                        <input className={style.input} type="text" placeholder="yabvei" />
                     </div>
                 </div>
-                <div className="input-info">
-                    <div className="input-title">비밀번호</div>
+                <div className={style.inputInfo}>
+                    <div className={style.inputTitle}>비밀번호</div>
                     <div>
-                        <input className="input" type="password" placeholder="*********" />
+                        <input className={style.input} type="password" placeholder="*********" />
                     </div>
                 </div>
-                <div className="btn-box">
-                    <button className="btn edit">수정</button>
-                    <button className="btn cancle">취소</button>
+                <div className={style.btnBox}>
+                    <button className={`${style.btn} ${style.edit}`}>수정</button>
+                    <button className={`${style.btn} ${style.cancel}`}>취소</button>
                 </div>
             </div>
         </div>

@@ -14,43 +14,7 @@ body {
     font-family: "SUITE-Regular";
 }
 
-#mypage-container {
-    margin-top: 15px;
-    margin-bottom: 69px;
-    margin-left: 88px;
-    margin-right: 88px;
-}
-
-#mypage-title {
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: 5px;
-    color: #666662;
-    margin-bottom: 15px;
-    text-align: center;
-    margin-right: 875px;
-}
-
-#container {
-    display: flex;
-    justify-content: center;
-}
-
-#content {
-    text-align: center;
-    position: relative;
-    width: 782px;
-    height: 600px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
-}
-
-.content-title {
+.contentTitle {
     position: absolute;
     top: 0;
     left: 0;
@@ -67,11 +31,11 @@ body {
     align-items: center;
 }
 
-.baby-input {
+.babyInput {
     margin-bottom: 20px;
 }
 
-.baby-title {
+.babyTitle {
     margin-bottom: 21px;
     color: #000000;
     font-size: 20px;
@@ -79,7 +43,7 @@ body {
     text-align: left;
 }
 
-.baby-name-input {
+.babyNameInput {
     margin-bottom: 15px;
     width: 446px;
     height: 30px;
@@ -104,7 +68,7 @@ input::placeholder {
     font-weight: 300;
 }
 
-.baby-birth input {
+.babyBirth input {
     text-align: center;
     border: none;
     border-bottom: 2px solid #d9d9d9;
@@ -116,51 +80,51 @@ input::placeholder {
     margin-right: 5px;
 }
 
-.baby-birth-box {
+.babyBirthBox {
     margin-left: 63px;
 }
 
-.baby-birth label {
+.babyBirth label {
     font-size: 16px;
     font-weight: 300;
     color: #666662;
     margin-right: 56px;
 }
 
-.baby-birth-year {
+.babyBirthYear {
     margin-left: 10px;
     width: 112px;
 }
 
-.baby-birth-month {
+.babyBirthMonth {
     width: 60px;
 }
 
-.baby-gender {
+.babyGender {
     margin-left: 25px;
 }
 
-.baby-gender input {
+.babyGender input {
     margin-left: 8px;
     margin-top: 10px;
     width: 21px;
     height: 17px;
 }
 
-.baby-body-box {
+.babyBodyBox {
     width: 460px;
 }
 
-.baby-gender-box {
+.babyGenderBox {
     text-align: left;
     width: 460px;
 }
 
-.baby-gender label {
+.babyGender label {
     margin-right: 87px;
 }
 
-.baby-body .body-label {
+.babyBody .bodyLabel {
     margin-right: 13px;
     margin-left: 5px;
     font-size: 16px;
@@ -168,12 +132,12 @@ input::placeholder {
     color: #000000;
 }
 
-.baby-body {
+.babyBody {
     margin-left: 25px;
     text-align: left;
 }
 
-.baby-body input {
+.babyBody input {
     width: 45px;
     height: 30px;
     border: none;
@@ -187,12 +151,12 @@ input::placeholder {
     text-align: center;
 }
 
-.baby-body input + label {
+.babyBody input + label {
     margin-left: 16px;
     color: #666662;
 }
 
-.body-label-cm {
+.bodyLabelCm {
     margin-right: 87px;
 }
 
@@ -202,7 +166,7 @@ input::placeholder {
     font-weight: 300;
 }
 
-.btn-box {
+.btnBox {
     width: 468px;
     margin-top: 15px;
 }

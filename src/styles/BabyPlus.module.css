@@ -1,0 +1,150 @@
+@font-face {
+    font-family: "SUITE-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "SUITE-Regular";
+}
+
+#mypageContainer {
+    margin-top: 15px;
+    margin-bottom: 69px;
+    margin-left: 88px;
+    margin-right: 88px;
+}
+
+#mypageTitle {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #666662;
+    margin-bottom: 15px;
+    text-align: center;
+    margin-right: 875px;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    text-align: center;
+    position: relative;
+    width: 782px;
+    height: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.contentTitle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.babyInfo {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.babyInput {
+    margin-bottom: 20px;
+}
+
+.babyTitle {
+    margin-bottom: 21px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.babyNameInput {
+    margin-bottom: 15px;
+    width: 446px;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid #d9d9d9;
+    font-size: 16px;
+    font-weight: 300;
+    color: #666662;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+input:focus {
+    border: none;
+    border-bottom: 2px solid #d9d9d9;
+    outline: none;
+}
+
+input::placeholder {
+    color: #666662;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.babyBirth input {
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid #d9d9d9;
+    font-size: 16px;
+    font-weight: 300;
+    color: #666662;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-right: 5px;
+}
+
+.babyBirthBox {
+    margin-left: 63px;
+}
+
+.babyBirth label {
+    font-size: 16px;
+    font-weight: 300;
+    color: #666662;
+    margin-right: 56px;
+}
+
+.babyBirthYear {
+    margin-left: 10px;
+    width: 112px;
+}
+
+.babyBirthMonth {
+    width: 60px;
+}
+
+.babyBirthDay {
+    width: 60px;
+}
+
+.babyGender {
+    margin-left: 25px;
+}
+
+.babyGender input {
+    margin-left: 8px;
+    margin-top: 10px;
+}

@@ -1,10 +1,26 @@
-footer {
+@font-face {
+    font-family: "SUITE-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "SUITE-Regular";
+}
+
+.footer {
     height: 281px;
     background: #666662;
     box-sizing: border-box;
 }
 
-.footer-menu {
+.footerMenu {
     height: 56px;
     background: #666662;
     border-bottom: 1px solid #fff4d6;
@@ -12,7 +28,7 @@ footer {
     align-items: center;
 }
 
-.menu-item {
+.menuItem {
     margin: 0 10px;
     font-weight: 500;
     font-size: 14px;
@@ -20,23 +36,23 @@ footer {
     color: #fff4d6;
 }
 
-.menu-separator {
+.menuSeparator {
     color: #fff4d6;
     margin: 0 10px;
 }
 
-.footer-content {
+.footerContent {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
 }
 
-.company-info {
+.companyInfo {
     margin-top: 48px;
     color: #b7b09e;
 }
 
-.company-name {
+.companyName {
     text-align: left;
     font-weight: 500;
     font-size: 16px;
@@ -57,7 +73,7 @@ footer {
     margin: 0 20px;
 }
 
-.sns-icons {
+.snsIcons {
     text-align: left;
     margin-top: 35px;
 }
@@ -69,13 +85,13 @@ footer {
     margin-right: 38px;
 }
 
-.customer-service {
+.customerService {
     margin-right: 5px; /*1:1문의하기 버튼 박스 오른쪽 선이 애매하게 안 보여서 */
     margin-top: 48px;
     color: #fff4d6;
 }
 
-.customer-title {
+.customerTitle {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -88,7 +104,7 @@ footer {
     margin-right: 10px;
 }
 
-.inquiry-button {
+.inquiryButton {
     width: 80px;
     height: 24px;
     border: 1px solid #fff4d6;

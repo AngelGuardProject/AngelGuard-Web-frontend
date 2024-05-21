@@ -1,15 +1,10 @@
 import "./App.css";
-import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
-import Main from "./pages/main";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+
+import MyPage from "./pages/MyPage";
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Main />}></Route>
-      </Routes>
-    </Router>
-  );
+    return <MyPage />;
 }
 
 export default App;

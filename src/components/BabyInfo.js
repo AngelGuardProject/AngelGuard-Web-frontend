@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import BabyPlus from "./BabyPlus"; // BabyPlus 컴포넌트 import
-import BabyEdit from "./BabyEdit"; // BabyEdit 컴포넌트 import
-import "../styles/BabyInfo.css";
+import BabyPlus from "./BabyPlus";    
+import BabyEdit from "./BabyEdit"; 
+import style from "../styles/BabyInfo.module.css";
 
 function BabyInfo() {
     const [showBabyPlus, setShowBabyPlus] = useState(false);
@@ -23,18 +23,18 @@ function BabyInfo() {
             {selectedBaby && <BabyEdit baby={selectedBaby} />}
             {!showBabyPlus && !selectedBaby && (
                 <div>
-                    <div className="content-title">아기 정보</div>
-                    <div className="plus-baby" onClick={handleAddBabyClick}>
+                    <div className={style.contentTitle}>아기 정보</div>
+                    <div className={style.plusBaby} onClick={handleAddBabyClick}>
                         + 아기 등록하기
                     </div>
-                    <div id="baby-list">
-                        <div className="baby-info" onClick={() => handleBabyClick("오주희")}>
-                            <div className="baby-name">오주희</div>
-                            <div className="baby-birth">여아 / 2003.11.30</div>
+                    <div className={style.babyList}>
+                        <div className={style.babyInfo} onClick={() => handleBabyClick("오주희")}>
+                            <div className={style.babyName}>오주희</div>
+                            <div className={style.babyBirth}>여아 / 2003.11.30</div>
                         </div>
-                        <div className="baby-info" onClick={() => handleBabyClick("김선우")}>
-                            <div className="baby-name">김선우</div>
-                            <div className="baby-birth">남아 / 2004.12.01</div>
+                        <div className={style.babyInfo} onClick={() => handleBabyClick("김선우")}>
+                            <div className={style.babyName}>김선우</div>
+                            <div className={style.babyBirth}>남아 / 2004.12.01</div>
                         </div>
                     </div>
                 </div>

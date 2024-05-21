@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/MyPost.css";
+import style from "../styles/MyPost.module.css";
 
 const MyPost = () => {
     const myPosts = [
@@ -10,31 +10,31 @@ const MyPost = () => {
 
     return (
         <div>
-            <div className="content-title">게시글 조회</div>
-            <div className="post-info total-posts-box">
-                <div className="total-posts">총 게시글 {myPosts.length}</div>
+            <div className={style.contentTitle}>게시글 조회</div>
+            <div className={`${style.postInfo} ${style.totalPostsBox}`}>
+                <div className={style.totalPosts}>총 게시글 {myPosts.length}</div>
             </div>
-            <div className="post-info">
-                <button className="write-btn">작성하기</button>
+            <div className={style.postInfo}>
+                <button className={style.writeBtn}>작성하기</button>
             </div>
-            <div className="post-list">
-                <div className="post-header">
-                    <span className="post-no">번호</span>
-                    <span className="post-title">제목</span>
-                    <span className="post-date">날짜</span>
-                    <span className="post-likes">좋아요</span>
-                    <span className="post-author">작성자</span>
+            <div className={style.postList}>
+                <div className={style.postHeader}>
+                    <span className={style.postNo}>번호</span>
+                    <span className={style.postTitle}>제목</span>
+                    <span className={style.postDate}>날짜</span>
+                    <span className={style.postLikes}>좋아요</span>
+                    <span className={style.postAuthor}>작성자</span>
                 </div>
                 {myPosts.map((post) => (
-                    <div key={post.no} className="post-item">
-                        <span className="post-no">{post.no}</span>
-                        <span className="post-title">{post.title}</span>
-                        <span className="post-date">{post.date}</span>
-                        <span className="post-likes">{post.likes}</span>
-                        <span className="post-author">{post.author}</span>
+                    <div key={post.no} className={style.postItem}>
+                        <span className={style.postNo}>{post.no}</span>
+                        <span className={style.postTitle}>{post.title}</span>
+                        <span className={style.postDate}>{post.date}</span>
+                        <span className={style.postLikes}>{post.likes}</span>
+                        <span className={style.postAuthor}>{post.author}</span>
                     </div>
                 ))}
-                <div className="pagination">
+                <div className={style.pagination}>
                     <span>&lt;</span>
                     <span>1</span>
                     <span>2</span>

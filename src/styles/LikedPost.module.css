@@ -1,0 +1,95 @@
+.contentTitle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 22px;
+    margin-left: 30px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.postInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.totalPostsBox {
+    margin-right: 600px;
+    margin-bottom: 20px;
+    color: #666662;
+}
+
+.postList {
+    margin-top: 10px;
+    width: 706px;
+    height: 376px;
+}
+
+.postHeader {
+    height: 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #666662;
+    border-bottom: 1px solid #666662;
+}
+
+.postHeader .postNo {
+    width: 70px; /* 번호의 폭 */
+}
+
+.postHeader .postTitle {
+    width: 250px; /* 제목의 폭 */
+}
+
+.postHeader .postDate {
+    width: 134px; /* 날짜의 폭 */
+}
+
+.postHeader .postLikes,
+.postHeader .postAuthor {
+    width: 66px; /* 좋아요, 작성자의 폭 */
+}
+
+.postHeader span {
+    flex: none; /* 자식 요소의 크기를 자동으로 조정하지 않도록 설정 */
+}
+
+.postItem {
+    height: 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.postItem .postNo {
+    width: 70px; /* 번호의 폭 */
+}
+
+.postItem .postTitle {
+    width: 250px; /* 제목의 폭 */
+}
+
+.postItem .postDate {
+    width: 134px; /* 날짜의 폭 */
+}
+
+.postItem .postLikes,
+.postItem .postAuthor {
+    width: 66px; /* 좋아요, 작성자의 폭 */
+}
+
+.postItem span {
+    flex: none; /* 자식 요소의 크기를 자동으로 조정하지 않도록 설정 */
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.pagination span {
+    margin-right: 23px;
+}

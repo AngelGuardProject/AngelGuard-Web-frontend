@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import style from "../styles/MyPage.module.css";
 import Header2 from "../components/Header2";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
@@ -18,11 +18,11 @@ const MyPage = () => {
     return (
         <div>
             <Header2 />
-            <div id="mypage-container">
-                <div id="mypage-title">MY PAGE</div>
-                <div id="container">
+            <div id={style.mypageContainer}>
+                <div id={style.mypageTitle}>MY PAGE</div>
+                <div id={style.container}>
                     <Sidebar onMenuItemClick={handleMenuItemClick} />
-                    <div id="content">
+                    <div id={style.content}>
                         {activeMenuItem === "내 정보 수정" && <MyInfo />}
                         {activeMenuItem === "아기 정보 수정" && <BabyInfo />}
                         {activeMenuItem === "게시글 조회" && <MyPost />}
