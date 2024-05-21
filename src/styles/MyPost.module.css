@@ -1,3 +1,5 @@
+/* MyPost.module.css */
+
 @font-face {
     font-family: "SUITE-Regular";
     src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2") format("woff2");
@@ -5,78 +7,48 @@
     font-style: normal;
 }
 
-html {
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    font-family: "SUITE-Regular";
-}
-
-#mypage-container {
-    margin-top: 15px;
-    margin-bottom: 69px;
-    margin-left: 88px;
-    margin-right: 88px;
-}
-
-#mypage-title {
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: 5px;
-    color: #666662;
-    margin-bottom: 15px;
-    text-align: center;
-    margin-right: 875px;
-}
-#container {
-    display: flex;
-    justify-content: center;
-}
-
-#content {
-    text-align: center;
-    position: relative;
-    width: 782px;
-    height: 600px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
-}
-/*다른 곳에서 content-title 바꿔야할수도?*/
-.content-title {
+.contentTitle {
     position: absolute;
     top: 0;
     left: 0;
     margin-top: 22px;
-    margin-left: 30px;
+    margin-left: 40px;
     font-size: 24px;
     font-weight: 700;
     color: #000000;
 }
-.post-info {
+
+.postInfo {
     display: flex;
     justify-content: space-between;
 }
 
-.total-liked-posts {
-    margin-right: 600px;
-    margin-bottom: 20px;
+.totalPostsBox {
+    margin-right: 630px;
     color: #666662;
 }
 
-.post-list {
+.writeBtn {
+    padding: 2px;
+    width: 94px;
+    height: 27px;
+    margin-left: 610px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    background-color: #fff4d6;
+    color: #666662;
+    border: none;
+    margin-bottom: 16px;
+}
+
+.postList {
     margin-top: 10px;
     width: 706px;
     height: 376px;
 }
 
-.post-header {
+.postHeader {
     height: 34px;
     display: flex;
     justify-content: space-between;
@@ -85,28 +57,28 @@ body {
     border-bottom: 1px solid #666662;
 }
 
-.post-header .post-no {
+.postHeader .postNo {
     width: 70px; /* 번호의 폭 */
 }
 
-.post-header .post-title {
+.postHeader .postTitle {
     width: 250px; /* 제목의 폭 */
 }
 
-.post-header .post-date {
+.postHeader .postDate {
     width: 134px; /* 날짜의 폭 */
 }
 
-.post-header .post-likes,
-.post-header .post-author {
+.postHeader .postLikes,
+.postHeader .postAuthor {
     width: 66px; /* 좋아요, 작성자의 폭 */
 }
 
-.post-header span {
+.postHeader span {
     flex: none; /* 자식 요소의 크기를 자동으로 조정하지 않도록 설정 */
 }
 
-.post-item {
+.postItem {
     height: 34px;
     display: flex;
     justify-content: space-between;
@@ -114,24 +86,24 @@ body {
     border-bottom: 1px solid #d9d9d9;
 }
 
-.post-item .post-no {
+.postItem .postNo {
     width: 70px; /* 번호의 폭 */
 }
 
-.post-item .post-title {
+.postItem .postTitle {
     width: 250px; /* 제목의 폭 */
 }
 
-.post-item .post-date {
+.postItem .postDate {
     width: 134px; /* 날짜의 폭 */
 }
 
-.post-item .post-likes,
-.post-item .post-author {
+.postItem .postLikes,
+.postItem .postAuthor {
     width: 66px; /* 좋아요, 작성자의 폭 */
 }
 
-.post-item span {
+.postItem span {
     flex: none; /* 자식 요소의 크기를 자동으로 조정하지 않도록 설정 */
 }
 

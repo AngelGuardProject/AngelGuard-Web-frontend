@@ -1,0 +1,229 @@
+@font-face {
+    font-family: "SUITE-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "SUITE-Regular";
+}
+
+#mypage-container {
+    margin-top: 15px;
+    margin-bottom: 69px;
+    margin-left: 88px;
+    margin-right: 88px;
+}
+
+#mypage-title {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #666662;
+    margin-bottom: 15px;
+    text-align: center;
+    margin-right: 875px;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    text-align: center;
+    position: relative;
+    width: 782px;
+    height: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.contentTitle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.babyInfo {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.babyInfo {
+    margin-bottom: 20px;
+}
+
+.baby-title {
+    margin-bottom: 21px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.baby-name-input {
+    margin-bottom: 15px;
+    width: 446px;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid #d9d9d9;
+    font-size: 16px;
+    font-weight: 300;
+    color: #666662;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+input:focus {
+    border: none;
+    border-bottom: 2px solid #d9d9d9;
+    outline: none;
+}
+
+input::placeholder {
+    color: #666662;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.baby-birth input {
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid #d9d9d9;
+    font-size: 16px;
+    font-weight: 300;
+    color: #666662;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-right: 5px;
+}
+
+.baby-birth-box {
+    margin-left: 63px;
+}
+
+.baby-birth label {
+    font-size: 16px;
+    font-weight: 300;
+    color: #666662;
+    margin-right: 56px;
+}
+
+.baby-birth-year {
+    margin-left: 10px;
+    width: 112px;
+}
+
+.baby-birth-month {
+    width: 60px;
+}
+
+.baby-gender {
+    margin-left: 25px;
+}
+
+.baby-gender input {
+    margin-left: 8px;
+    margin-top: 10px;
+    width: 21px;
+    height: 17px;
+}
+
+.baby-body-box {
+    width: 460px;
+}
+
+.baby-gender-box {
+    text-align: left;
+    width: 460px;
+}
+
+.baby-gender label {
+    margin-right: 87px;
+}
+
+.baby-body .body-label {
+    margin-right: 13px;
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.baby-body {
+    margin-left: 25px;
+    text-align: left;
+}
+
+.baby-body input {
+    width: 45px;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid #d9d9d9;
+    font-size: 16px;
+    font-weight: 300;
+    color: #666662;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.baby-body input + label {
+    margin-left: 16px;
+    color: #666662;
+}
+
+.body-label-cm {
+    margin-right: 87px;
+}
+
+#body-input {
+    color: #666662;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.btn-box {
+    width: 468px;
+    margin-top: 15px;
+}
+
+.btn {
+    width: 200px;
+    height: 43px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.edit {
+    margin-right: 40px;
+    background-color: #fff4d6;
+    border: none;
+}
+
+.cancle {
+    background-color: #ffffff;
+    border: 1px solid #a6a6a6;
+}
+#radio[type="radio"]:checked + label::before {
+    background-color: black;
+}

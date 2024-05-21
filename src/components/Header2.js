@@ -1,25 +1,25 @@
-import "../styles/Header2.css";
+import style from "../styles/Header2.module.css"; 
 function Header2() {
-    //메인 헤더
+
     return (
         <div>
-            <header id="header-container2">
-                <div className="logo">AngelGuard</div>
-                <nav className="menu">
+            <header className={style.headerContainer}>
+                <div className={style.logo}>AngelGuard</div>
+                <nav className={style.menu}>
                     <ul>
                         <li>
-                            <a href="#" id="menu-item">
+                            <a href="#" className={style.menuItem}>
                                 community
                             </a>
                         </li>
                         <li>
-                            <a href="#" id="menu-item">
+                            <a href="#" className={style.menuItem}>
                                 logout
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img id="menu-img" src={require("../assets/profile.png")} />
+                                <img className={style.menuImg} src={require("../assets/profile.png")} />
                             </a>
                         </li>
                     </ul>
