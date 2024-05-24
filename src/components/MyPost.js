@@ -3,17 +3,16 @@ import style from "../styles/MyPost.module.css";
 
 const MyPost = () => {
     const myPosts = [
-        { no: 1, title: "이건 내가 씀", date: "2023-05-01", likes: 10, author: "누구게" },
-        { no: 2, title: "내가 썻어", date: "2023-05-02", likes: 40, author: "최혜림이다" },
-        { no: 3, title: "나연 예빈 열애설 ", date: "2023-05-03", likes: 14, author: "나다" },
+        { no: 1, title: "예시 작성글1", date: "2023.05.01", likes: 10, author: "엄마" },
+        { no: 2, title: "예시 작성글2", date: "2023.05.02", likes: 40, author: "엄마" },
+        { no: 3, title: "예시 작성글3 ", date: "2023.05.03", likes: 14, author: "엄마" },
     ];
-
     return (
         <div>
             <div className={style.contentTitle}>게시글 조회</div>
-            <div className={`${style.postInfo} ${style.totalPostsBox}`}>
-                <div className={style.totalPosts}>총 게시글 {myPosts.length}</div>
-            </div>
+
+            <div className={style.totalPosts}>총 게시글 {myPosts.length}개</div>
+
             <div className={style.postInfo}>
                 <button className={style.writeBtn}>작성하기</button>
             </div>

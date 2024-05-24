@@ -1,24 +1,24 @@
 .contentTitle {
-    margin: 20px 20px 0 20px;
     position: absolute;
     top: 0;
     left: 0;
-    margin: 20px;
+    margin-top: 35px;
+    margin-left: 35px;
     font-size: 24px;
     font-weight: 700;
     color: #000000;
 }
-.postInfo {
+
+.totalLikedPosts {
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: 500;
     display: flex;
+    width: 706px;
     justify-content: space-between;
+    margin-bottom: 25px;
+    color: #8e857f;
 }
-
-.totalPostsBox {
-    margin-bottom: 45px;
-    margin-right: 600px;
-    color: #666662;
-}
-
 .postList {
     width: 706px;
     height: 376px;
@@ -51,6 +51,7 @@
 }
 
 .postHeader span {
+    font-size: 16px;
     flex: none; /* 자식 요소의 크기를 자동으로 조정하지 않도록 설정 */
 }
 
@@ -78,8 +79,13 @@
 .postItem .postAuthor {
     width: 66px; /* 좋아요, 작성자의 폭 */
 }
-
+.postItem .postDate,
+.postItem .postLikes,
+.postItem .postAuthor {
+    color: #a6a6a6;
+}
 .postItem span {
+    font-size: 14px;
     flex: none; /* 자식 요소의 크기를 자동으로 조정하지 않도록 설정 */
 }
 

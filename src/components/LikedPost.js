@@ -3,17 +3,15 @@ import style from "../styles/LikedPost.module.css";
 const LikedPost = () => {
     // 예시 데이터
     const likedPosts = [
-        { no: 1, title: "울 혜림공주 일기~", date: "2023-05-01", likes: 10, author: "나" },
-        { no: 2, title: "재호님 하드웨어 천재설 ㄷㄷ", date: "2023-05-02", likes: 20, author: "나예요" },
-        { no: 3, title: "응애 애기 2조 조강홍교수님이랑 단체샷", date: "2023-05-03", likes: 30, author: "나라고" },
+        { no: 1, title: "예시 작성글1", date: "2023.05.01", likes: 10, author: "엄마" },
+        { no: 2, title: "예시 작성글2", date: "2023.05.02", likes: 40, author: "엄마" },
+        { no: 3, title: "예시 작성글3 ", date: "2023.05.03", likes: 14, author: "엄마" },
     ];
 
     return (
         <div>
             <div className={style.contentTitle}>좋아요한 게시글</div>
-            <div className={`${style.postInfo} ${style.totalPostsBox}`}>
-                <div className={style.totalLikedPosts}>좋아요한 게시글 {likedPosts.length}</div>
-            </div>
+            <div className={style.totalLikedPosts}>좋아요한 게시글 {likedPosts.length}개 </div>
 
             <div className={style.postList}>
                 <div className={style.postHeader}>
