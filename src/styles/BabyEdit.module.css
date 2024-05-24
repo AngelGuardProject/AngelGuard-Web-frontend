@@ -154,7 +154,9 @@ input:focus {
     margin-left: 16px;
     color: #666662;
 }
-
+.bodyLabel {
+    color: #000000;
+}
 .bodyLabelCm {
     margin-right: 80px;
 }

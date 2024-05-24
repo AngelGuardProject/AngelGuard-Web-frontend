@@ -1,22 +1,65 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Footer from "../components/Footer";
 import style from "../styles/main.module.css";
 import Header from "../components/Header";
 
 function Main() {
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollPosition(window.scrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     const productSectionRef = useRef(null);
 
     const scrollToProductSection = () => {
         productSectionRef.current.scrollIntoView({ behavior: "smooth" });
     };
+    const [height, setHeight] = useState("");
+    const [weight, setWeight] = useState("");
+    const [message, setMessage] = useState("");
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleSubmit = () => {
+        if (!height || !weight) {
+            alert("키와 몸무게를 모두 입력해주세요.");
+            return;
+        }
+
+        if (submitted) {
+            setHeight("");
+            setWeight("");
+            setMessage("");
+            setSubmitted(false);
+        } else {
+            const heightInMeters = height / 100;
+            const bmi = weight / (heightInMeters * heightInMeters);
+
+            let result;
+            if (bmi < 18.5) {
+                result = "저체중입니다";
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                result = "정상체중입니다";
+            } else {
+                result = "과체중입니다";
+            }
+
+            setMessage(result);
+            setSubmitted(true);
+        }
+    };
 
     return (
         <div>
-            <Header />
+            <Header scrolled={scrollPosition > 0} backgroundColor="#fff4d6" />
             <section id={style.mainSection}>
-                <div className={style.textContainer}>
+                <div className={style.textContent}>
                     <img src={require("../assets/main.png")} className={style.mainImg} />
-                    <div>
+                    <div className={style.textContainer}>
                         <div className={style.mainText}>We are babycare</div>
                         <div className={style.mainText}>
                             Professionals <span className={style.smallText}>for family</span>
@@ -25,15 +68,13 @@ function Main() {
                     </div>
                 </div>
                 <div id={style.connectText}>
-                    <div className={style.connectText}>AngelGuard Product</div>
-                    <div>
-                        <img src={require("../assets/next.png")} alt="next" onClick={scrollToProductSection} style={{ cursor: "pointer" }} />
-                    </div>
+                    <img src={require("../assets/next.png")} alt="next" onClick={scrollToProductSection} style={{ cursor: "pointer" }} />
                 </div>
             </section>
 
             <section id={style.proudctSection} ref={productSectionRef}>
-                <div className={style.subText}>우리의 모든 서비스는 하나의 어플과 장난감 모빌 안에서 누릴 수 있습니다.</div>
+                <div className={style.connectText}>AngelGuard Product</div>
+                <div className={style.subText}>" 우리의 모든 서비스는 하나의 어플과 장난감 모빌 안에서 누릴 수 있습니다. " </div>
                 <div className={style.productContainer}>
                     <div className={style.productItem}>
                         <img src={require("../assets/product1.png")} alt="" />
@@ -93,22 +134,24 @@ function Main() {
                     </div>
                     <div id={style.bodyInputContainer}>
                         <div className={style.bodyInputBox}>
-                            <input className={style.bodyInput} type="text" />
+                            <input className={style.bodyInput} type="text" value={height} onChange={(e) => setHeight(e.target.value)} />
                             cm
                         </div>
                         <div>
-                            <input className={style.bodyInput} type="text" />
+                            <input className={style.bodyInput} type="text" value={weight} onChange={(e) => setWeight(e.target.value)} />
                             kg
                         </div>
                     </div>
                     <div className={style.bodyBtn}>
-                        <button>입력하기</button>
+                        {message && <div className={style.resultMessage}> " {message} "</div>}
+                        <button onClick={handleSubmit}>{submitted ? "다시하기" : "입력하기"}</button>
                     </div>
                 </div>
+
                 <div className={style.bodyDepContainer}>
                     <div className={style.depTitle}>
                         <div className={style.depSub}>MY BABY BODY ANALYSIS</div>
-                        <div className={style.depSub2}>kids care service</div>
+                        <div className={style.depSub2}>Kids care service </div>
                     </div>
                     <div className={style.depContainer}>
                         보건복지부와 대한소아과학회가 공동으로 약 10년마다 제정·발표하는 <br />
