@@ -26,7 +26,7 @@ function Header() {
         <nav className={style.menu}>
           <ul>
             <li>
-              <a href="#" className={style.menuItem}>
+              <a href="/community" className={style.menuItem}>
                 community
               </a>
             </li>
