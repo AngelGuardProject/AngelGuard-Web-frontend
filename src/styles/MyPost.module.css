@@ -11,13 +11,11 @@
     position: absolute;
     top: 0;
     left: 0;
-    margin-top: 22px;
-    margin-left: 40px;
+    margin: 20px;
     font-size: 24px;
     font-weight: 700;
     color: #000000;
 }
-
 .postInfo {
     display: flex;
     justify-content: space-between;

@@ -1,17 +1,18 @@
-import {useState} from "react";
+import { useState } from "react";
 import style from "../styles/Header.module.css"; // Correct import path
 import Login from "./modal/Login-modal";
 import SignUp from "./modal/SignUp-modal";
 function Header() {
-  const [modal, setModal] = useState();
+    const [modal, setModal] = useState();
 
-  const openLogin = () => {
-    setModal("login");
-  };
+    const openLogin = () => {
+        setModal("login");
+    };
 
-  const openSignUp = () => {
-    setModal("signup");
-  };
+    const openSignUp = () => {
+        setModal("signup");
+    };
+
 
   const closeModal = () => {
     setModal(null);

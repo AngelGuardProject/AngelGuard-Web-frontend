@@ -181,14 +181,14 @@ body {
     justify-content: center;
     margin-top: 20px; /* 위쪽 여백 추가 */
 }
-.bodyInput {
+.bodyInputBox {
     margin-left: 50px;
 }
 #bodyInputContainer div {
     margin-right: 99px; /* input 사이의 간격 */
 }
 
-input[type="text"] {
+.bodyInput[type="text"] {
     width: 45px;
     border: none;
     border-bottom: 2px solid #d9d9d9;

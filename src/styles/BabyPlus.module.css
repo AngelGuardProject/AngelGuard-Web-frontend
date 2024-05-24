@@ -13,43 +13,6 @@ html {
 body {
     font-family: "SUITE-Regular";
 }
-
-#mypageContainer {
-    margin-top: 15px;
-    margin-bottom: 69px;
-    margin-left: 88px;
-    margin-right: 88px;
-}
-
-#mypageTitle {
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: 5px;
-    color: #666662;
-    margin-bottom: 15px;
-    text-align: center;
-    margin-right: 875px;
-}
-
-#container {
-    display: flex;
-    justify-content: center;
-}
-
-#content {
-    text-align: center;
-    position: relative;
-    width: 782px;
-    height: 600px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
-}
-
 .contentTitle {
     position: absolute;
     top: 0;
@@ -60,11 +23,10 @@ body {
     color: #000000;
 }
 
-.babyInfo {
+.babyInfoContainer {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .babyInput {
@@ -72,6 +34,7 @@ body {
 }
 
 .babyTitle {
+    margin-left: 10px;
     margin-bottom: 21px;
     color: #000000;
     font-size: 20px;
@@ -80,16 +43,16 @@ body {
 }
 
 .babyNameInput {
-    margin-bottom: 15px;
-    width: 446px;
+    margin-left: 15px;
+    margin-right: 40px;
+    padding-left: 10px;
+    width: 425px;
     height: 30px;
     border: none;
     border-bottom: 2px solid #d9d9d9;
     font-size: 16px;
     font-weight: 300;
     color: #666662;
-    padding-top: 10px;
-    padding-left: 10px;
 }
 
 input:focus {
@@ -98,53 +61,133 @@ input:focus {
     outline: none;
 }
 
-input::placeholder {
+.babyNameInput::placeholder {
     color: #666662;
     font-size: 16px;
     font-weight: 300;
 }
 
-.babyBirth input {
+.babyBirth {
     text-align: center;
     border: none;
-    border-bottom: 2px solid #d9d9d9;
     font-size: 16px;
     font-weight: 300;
     color: #666662;
-    padding-top: 10px;
-    padding-left: 10px;
-    margin-right: 5px;
 }
-
-.babyBirthBox {
-    margin-left: 63px;
+.babyBirth input::placeholder {
+    color: #666662;
+    font-weight: 300;
+    text-align: center;
 }
 
 .babyBirth label {
     font-size: 16px;
     font-weight: 300;
     color: #666662;
-    margin-right: 56px;
+    margin-right: 70px;
 }
 
 .babyBirthYear {
-    margin-left: 10px;
+    margin-left: 15px;
+    height: 30px;
+    border-bottom: 2px solid #d9d9d9;
     width: 112px;
 }
 
 .babyBirthMonth {
-    width: 60px;
-}
-
-.babyBirthDay {
+    height: 30px;
+    border-bottom: 2px solid #d9d9d9;
     width: 60px;
 }
 
 .babyGender {
-    margin-left: 25px;
+    margin-left: 15px;
 }
 
 .babyGender input {
     margin-left: 8px;
     margin-top: 10px;
+    width: 21px;
+    height: 17px;
+}
+
+.babyBodyBox {
+    width: 460px;
+}
+
+.babyGenderBox {
+    text-align: left;
+    width: 460px;
+}
+
+.babyGender label {
+    margin-right: 130px;
+}
+
+.baby-body .body-label {
+    margin-right: 13px;
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.babyBody {
+    margin-left: 25px;
+    text-align: left;
+}
+
+.babyBody input {
+    margin-left: 10px;
+    margin-right: 5px;
+    text-align: center;
+    width: 45px;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid #d9d9d9;
+    font-size: 16px;
+    font-weight: 300;
+    color: #666662;
+}
+
+.babyBody input + label {
+    margin-left: 16px;
+    color: #666662;
+}
+
+.bodyLabelCm {
+    margin-right: 80px;
+}
+
+#bodyInput {
+    color: #666662;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.btnBox {
+    text-align: center;
+    width: 468px;
+    margin-top: 15px;
+}
+
+.btn {
+    width: 200px;
+    height: 43px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+#edit {
+    margin-right: 40px;
+    background-color: #fff4d6;
+    border: none;
+}
+
+#cancle {
+    background-color: #ffffff;
+    border: 1px solid #a6a6a6;
+}
+#radio[type="radio"]:checked + label::before {
+    background-color: black;
 }
