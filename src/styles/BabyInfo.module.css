@@ -1,3 +1,4 @@
+/* 폰트와 글로벌 스타일 설정 */
 @font-face {
     font-family: "SUITE-Regular";
     src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2") format("woff2");
@@ -14,6 +15,7 @@ body {
     font-family: "SUITE-Regular";
 }
 
+/* 레이아웃 스타일 설정 */
 #container {
     display: flex;
     justify-content: center;
@@ -45,47 +47,45 @@ body {
 .plusBaby {
     text-align: center;
     margin-top: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 300;
     color: #666662;
     cursor: pointer;
 }
 
+/* babyInfo 및 babyList 스타일 설정 */
 .babyInfo {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     text-align: left;
     width: 280px;
     height: 83px;
     border: 1px solid #666662;
-    border-radius: 25px;
+    border-radius: 20px;
     margin-bottom: 20px;
-    box-sizing: border-box;
-    padding-top: 10px;
-    margin-right: 25px;
 }
 
 .babyList {
-    margin-bottom: 320px;
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
+    gap: 60px;
     justify-content: center;
+    margin-bottom: 320px;
+    text-align: center;
 }
 
 .babyName {
-    margin-left: 15px;
-    margin-top: 5px;
+    margin-left: 30px;
+    margin-top: 15px;
     font-size: 20px;
     font-weight: 700;
     color: #000000;
 }
 
 .babyBirth {
-    margin-left: 20px;
-    margin-top: 5px;
-    font-size: 16px;
+    margin-left: 37px;
+    margin-top: 8px;
+    font-size: 15px;
     color: #bababa;
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-weight: 400;
 }
