@@ -11,7 +11,7 @@ const LikedPost = () => {
     return (
         <div>
             <div className={style.contentTitle}>좋아요한 게시글</div>
-            <div className={style.totalLikedPosts}>좋아요한 게시글 {likedPosts.length}개 </div>
+            <div className={style.totalLikedPosts}>좋아요한 게시글 1004</div>
 
             <div className={style.postList}>
                 <div className={style.postHeader}>

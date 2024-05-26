@@ -17,7 +17,7 @@ function Header2() {
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/mypage">
                                 <img className={style.menuImg} src={require("../assets/profile.png")} />
                             </a>
                         </li>

@@ -11,7 +11,7 @@ const MyPost = () => {
         <div>
             <div className={style.contentTitle}>게시글 조회</div>
 
-            <div className={style.totalPosts}>총 게시글 {myPosts.length}개</div>
+            <div className={style.totalPosts}>총 게시글 1004</div>
 
             <div className={style.postInfo}>
                 <button className={style.writeBtn}>작성하기</button>

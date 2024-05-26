@@ -1,13 +1,13 @@
 header {
-    transition: background-color 0.3s ease; /* 부드러운 전환 효과를 위한 transition 속성 */
+    transition: background-color 0.3s ease;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* 다른 콘텐츠 위에 표시하기 위해 z-index 설정 */
+    z-index: 1000;
 }
 .headerContainer {
     width: 100%;
-    max-width: 1805px;
+    max-width: 2000px;
     background-color: #ffffff;
     height: 80px;
     display: flex;
@@ -16,7 +16,7 @@ header {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.25); /* Shadow effect at the bottom */
+    box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.25);
 }
 
 .logo {
