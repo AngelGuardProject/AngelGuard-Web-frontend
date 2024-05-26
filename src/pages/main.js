@@ -55,7 +55,8 @@ function Main() {
 
     return (
         <div>
-            <Header scrolled={scrollPosition > 0} backgroundColor="#fff4d6" />
+            <Header color="#fff4d6" scrolled={true} />
+
             <section id={style.mainSection}>
                 <div className={style.textContent}>
                     <img src={require("../assets/main.png")} className={style.mainImg} />
