@@ -1,14 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import style from "../styles/Header.module.css"; // Correct import path
 import Login from "./modal/Login-modal";
 import SignUp from "./modal/SignUp-modal";
 
-function Header({ scrolled, backgroundColor }) {
-    const headerStyle = {
-        backgroundColor: scrolled ? "rgba(255, 244, 214, 0.5)" : backgroundColor,
-    };
-
+function Header({ color, scrolled }) {
     const [modal, setModal] = useState();
+    const [isScrolled, setIsScrolled] = useState(false);
+    const location = useLocation();
 
     const openLogin = () => {
         setModal("login");
@@ -17,14 +16,39 @@ function Header({ scrolled, backgroundColor }) {
     const openSignUp = () => {
         setModal("signup");
     };
+
     const closeModal = () => {
         setModal(null);
     };
-    //메인 헤더
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        if (scrolled && location.pathname === "/") {
+            window.addEventListener("scroll", handleScroll);
+        }
+
+        return () => {
+            if (scrolled && location.pathname === "/") {
+                window.removeEventListener("scroll", handleScroll);
+            }
+        };
+    }, [scrolled, location]);
+
+    const headerStyle = {
+        backgroundColor: isScrolled ? "rgba(255, 244, 214, 0.4)" : color,
+    };
+
     return (
         <div>
-            {modal == "login" ? <Login closeModal={closeModal} /> : null}
-            {modal == "signup" ? <SignUp closeModal={closeModal} /> : null}
+            {modal === "login" && <Login closeModal={closeModal} />}
+            {modal === "signup" && <SignUp closeModal={closeModal} />}
             <header className={style.headerContainer} style={headerStyle}>
                 <div className={style.logo}>AngelGuard</div>
                 <nav className={style.menu}>

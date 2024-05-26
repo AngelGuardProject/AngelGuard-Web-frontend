@@ -80,7 +80,6 @@ body {
     text-align: center;
 }
 .productItem {
-    position: relative;
     overflow: hidden;
     margin: 0 10px;
     display: flex;
@@ -207,13 +206,12 @@ body {
     margin-top: 20px;
 }
 #bodyInputContainer {
-    margin-right: 50px;
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 .bodyInputBox {
-    margin-left: 50px;
+    margin-left: 60px;
 }
 #bodyInputContainer div {
     margin-right: 99px; /* input 사이의 간격 */
