@@ -1,13 +1,14 @@
 import style from "../styles/Header2.module.css";
+
 function Header2() {
     return (
-        <div>
+        <div className={style.headerWrapper}>
             <header className={style.headerContainer}>
                 <div className={style.logo}>AngelGuard</div>
                 <nav className={style.menu}>
                     <ul>
                         <li>
-                            <a href="#" className={style.menuItem}>
+                            <a href="/community" className={style.menuItem}>
                                 community
                             </a>
                         </li>
