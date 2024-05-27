@@ -17,7 +17,13 @@ function SignUp({closeModal}) {
         id: id,
         pw: pw,
       },
-    });
+    })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
   return (
     <div className={style.background}>
