@@ -150,3 +150,24 @@
 .commentContent {
   margin: 0px 0px 18px 46px;
 }
+
+.backBtn {
+  width: 133px;
+  height: 61px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #666662;
+  text-align: center;
+  line-height: 61px;
+
+  margin: 50px auto;
+  box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.a {
+  text-decoration-line: none;
+}
