@@ -1,0 +1,116 @@
+.background {
+  width: 100%;
+  height: 1080px;
+  background-color: #f9f9f9;
+  margin-top: 80px;
+  overflow: auto;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: 0.5em;
+  color: #666662;
+  width: 1053px;
+  margin: 48px auto 28px;
+}
+
+.contentBox {
+  width: 1053px;
+  background-color: white;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.left {
+  margin: 18px 0 7px 20px;
+}
+.writerBox {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666662;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.profile {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+.boardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #666662;
+}
+
+.date {
+  font-size: 11px;
+  font-weight: 400;
+  color: #a6a6a6;
+
+  margin: 59px 20px 9px 0;
+}
+
+.line {
+  width: 96%;
+  height: 1px;
+  background-color: #a6a6a6;
+  margin: auto;
+}
+
+.content {
+  margin: 15px 20px 0 20px;
+}
+.writeContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.commentBox {
+  width: 1053px;
+  height: 170px;
+  margin: 20px auto;
+  background-color: white;
+  overflow: auto;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.commentTitle {
+  color: #a6a6a6;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 13px 0 10px 20px;
+}
+
+.input {
+  width: 900px;
+  border: none;
+  margin-left: 20px;
+  height: 90px;
+  resize: none;
+}
+
+.input::placeholder {
+  font-size: 16px;
+  font-weight: 300;
+  color: #a6a6a6;
+}
+.input:focus {
+  outline: none;
+}
+.submitBtn {
+  width: 130px;
+  background-color: #fff4d6;
+  border: none;
+}
+
+.comments {
+  width: 1053px;
+  background-color: white;
+  height: 100px;
+  margin: auto;
+}
