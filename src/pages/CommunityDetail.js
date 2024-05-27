@@ -39,16 +39,19 @@ function CommunityDetail() {
           <button className={style.submitBtn}>등록</button>
         </div>
         <div className={style.comments}>
-          <div className={style.comment}>
-            <div>
-              <img
-                className={style.profile}
-                src={require("../assets/mypage.png")}
-              />
-              <div>예빈맘</div>
-              <div></div>
+          {comment.map(item => (
+            <div className={style.comment}>
+              <div className={style.commentInfo}>
+                <img
+                  className={style.profile}
+                  src={require("../assets/mypage.png")}
+                />
+                <div className={style.commentWriter}>{item.writer}</div>
+                <div className={style.commentDate}>{item.date}</div>
+              </div>
+              <div className={style.commentContent}>{item.content}</div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
@@ -117,5 +120,32 @@ const data = [
     title: "아이 장난감 추천",
     date: "2024.04.01",
     writer: "마미",
+  },
+];
+
+const comment = [
+  {
+    writer: "예빈맘",
+    date: "2024.05.27 13:20PM",
+    content:
+      "개인적으로는 P사의 돌려돌려돌림판이 좋은것 같더라구요 실리콘 재질이라 세균 번식이 적고 세척이 쉬워서 저는 좋았어요 ㅎㅎ",
+  },
+  {
+    writer: "예빈맘",
+    date: "2024.05.27 13:20PM",
+    content:
+      "개인적으로는 P사의 돌려돌려돌림판이 좋은것 같더라구요 실리콘 재질이라 세균 번식이 적고 세척이 쉬워서 저는 좋았어요 ㅎㅎ",
+  },
+  {
+    writer: "예빈맘",
+    date: "2024.05.27 13:20PM",
+    content:
+      "개인적으로는 P사의 돌려돌려돌림판이 좋은것 같더라구요 실리콘 재질이라 세균 번식이 적고 세척이 쉬워서 저는 좋았어요 ㅎㅎ",
+  },
+  {
+    writer: "예빈맘",
+    date: "2024.05.27 13:20PM",
+    content:
+      "개인적으로는 P사의 돌려돌려돌림판이 좋은것 같더라구요 실리콘 재질이라 세균 번식이 적고 세척이 쉬워서 저는 좋았어요 ㅎㅎ",
   },
 ];

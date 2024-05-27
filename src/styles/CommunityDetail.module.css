@@ -20,6 +20,7 @@
   background-color: white;
   margin: auto;
   padding-bottom: 50px;
+  box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 .left {
@@ -77,6 +78,8 @@
 
   display: flex;
   justify-content: space-between;
+
+  box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 .commentTitle {
@@ -111,6 +114,36 @@
 .comments {
   width: 1053px;
   background-color: white;
-  height: 100px;
   margin: auto;
+  box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.comment {
+  width: 1053px;
+  height: 100px;
+  border-bottom: 1px solid #d9d9d9;
+  overflow: auto;
+}
+
+.commentInfo {
+  display: flex;
+  margin: 19px 0px 14px 46px;
+}
+
+.commentWriter {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 3px;
+}
+
+.commentDate {
+  font-size: 12px;
+  color: #a6a6a6;
+  vertical-align: bottom;
+  margin-top: 8px;
+  margin-left: 12px;
+}
+
+.commentContent {
+  margin: 0px 0px 18px 46px;
 }
