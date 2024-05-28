@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import style from "../styles/Header.module.css";
 import Login from "./modal/Login-modal";
 import SignUp from "./modal/SignUp-modal";
@@ -31,7 +31,7 @@ function Header({ color, scrolled }) {
         <div style={headerStyle}>
             {modal === "login" && <Login closeModal={closeModal} />}
             {modal === "signup" && <SignUp closeModal={closeModal} />}
-            <div className={style.headerWrapper}>
+            <div className={scrolled ? style.headerWrapperScrolled : style.headerWrapper}>
                 <header className={style.headerContainer}>
                     <div className={style.logo}>AngelGuard</div>
                     <nav className={style.menu}>
@@ -51,7 +51,6 @@ function Header({ color, scrolled }) {
                     </nav>
                 </header>
             </div>
-            <div className={style.headerSpacer}></div>
         </div>
     );
 }
