@@ -20,7 +20,6 @@ function Header({ color, scrolled }) {
 
     const headerStyle = {
         backgroundColor: scrolled ? "rgba(255, 244, 214, 0.4)" : color,
-        position: scrolled ? "fixed" : "static",
         top: 0,
         left: 0,
         right: 0,
