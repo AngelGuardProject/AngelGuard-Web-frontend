@@ -6,7 +6,7 @@ import style from "../styles/Community.module.css";
 function Community() {
   return (
     <div>
-      <Header color="#ffffff" scrolled={true} />
+      <Header color="#ffffff" scrolled={false} />
       <div>
         <div className={style.titleBox}>
           <div className={style.title}>COMMUNITY</div>

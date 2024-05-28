@@ -2,7 +2,7 @@
     width: 100%;
     top: 0;
     z-index: 998;
-    box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 8px -1px rgba(0, 0, 0, 0.1);
 }
 
 .headerContainer {
@@ -21,12 +21,13 @@
 
 .logo {
     margin-left: 40px;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 40px;
     color: #666662;
 }
 
 .menu {
+    margin-left: auto;
     display: flex;
     align-items: center;
 }
@@ -37,7 +38,7 @@
 }
 
 .menuItem {
-    margin-right: 48px;
+    margin-right: 50px;
     font-size: 20px;
     color: #666662;
     display: inline-block;
@@ -49,12 +50,12 @@
     height: 24px;
     display: inline-block;
     text-decoration: none;
-    margin-right: 24px;
-    margin-top: 2px;
+    margin-right: 25px;
+    margin-top: 3px;
 }
 
 .headerSpacer {
-    height: 80px; /* 페이지 컨텐츠가 Header2와 겹치지 않도록 높이를 설정합니다. */
+    height: 80px;
 }
 
 @media (max-width: 768px) {

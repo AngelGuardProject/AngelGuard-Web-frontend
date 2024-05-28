@@ -20,10 +20,17 @@
 
 .headerWrapper {
     width: 100%;
-    position: fixed;
+    box-shadow: 5px 5px 8px -1px rgba(0, 0, 0, 0.1);
     top: 0;
-    z-index: 998; /* Ensure header is below the overlay */
-    background-color: inherit; /* Inherit background color from parent */
+    z-index: 998;
+    background-color: inherit;
+}
+.headerWrapperScrolled {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 998;
+    background-color: inherit;
 }
 
 .headerContainer {
@@ -39,7 +46,7 @@
 
 .logo {
     margin-left: 20px;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 40px;
     color: #666662;
 }
@@ -71,18 +78,14 @@
     text-decoration: none;
 }
 
-.headerSpacer {
-    height: 80px;
-}
-
 @media (max-width: 768px) {
     .logo {
-        font-size: 30px; /* 작은 화면에서 로고 크기 조정 */
+        font-size: 30px;
     }
 
     .menuItem,
     .menuItem2 {
-        font-size: 18px; /* 작은 화면에서 메뉴 아이템 크기 조정 */
-        margin-right: 10px; /* 작은 화면에서 메뉴 아이템 간격 조정 */
+        font-size: 18px;
+        margin-right: 10px;
     }
 }
