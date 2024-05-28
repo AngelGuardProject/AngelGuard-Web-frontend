@@ -7,7 +7,6 @@ function Login({closeModal}) {
   const [pw, setPw] = useState("");
 
   const login = () => {
-    console.log(id, pw);
     axios
       .post("http://louk342.iptime.org:3000/user/login", {
         id: id,
