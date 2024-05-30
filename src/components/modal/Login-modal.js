@@ -15,6 +15,7 @@ function Login({closeModal}) {
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
+        closeModal();
       })
       .catch(err => {
         console.log(err);
