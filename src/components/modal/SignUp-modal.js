@@ -9,22 +9,38 @@ function SignUp({closeModal}) {
   const [username, setUsername] = useState("");
 
   const signUp = () => {
-    axios({
-      method: "post",
-      url: "http://louk342.iptime.org:3000/user/signUp",
-      data: {
-        username: username,
-        id: id,
-        pw: pw,
-      },
-    })
-      .then(res => {
-        console.log(res);
+    if (id == "") {
+      alert("아이디를 입력해주세요.");
+    }
+    if (pw == "") {
+      alert("비밀번호를 입력해주세요.");
+    }
+    if (pw != pwc) {
+      alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+    }
+    if (username == "") {
+      alert("닉네임을 입력해주세요.");
+    } else if (id != "" && pw != "" && pw == pwc && username != "") {
+      axios({
+        method: "post",
+        url: "http://louk342.iptime.org:3000/user/signUp",
+        data: {
+          username: username,
+          id: id,
+          pw: pw,
+        },
       })
-      .catch(err => {
-        console.log(err);
-      });
+        .then(res => {
+          console.log(res);
+          alert("회원가입에 성공하였습니다");
+          closeModal();
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   };
+
   return (
     <div className={style.background}>
       <div className={style.loginWrap}>
