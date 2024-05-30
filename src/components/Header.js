@@ -1,10 +1,11 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import style from "../styles/Header.module.css";
 import Login from "./modal/Login-modal";
 import SignUp from "./modal/SignUp-modal";
 
 function Header({color, scrolled}) {
   const [modal, setModal] = useState();
+  const [token, setToken] = useState();
 
   const openLogin = () => {
     setModal("login");
@@ -26,6 +27,8 @@ function Header({color, scrolled}) {
     zIndex: 999,
   };
 
+  useEffect(() => {}, [token]);
+
   return (
     <div style={headerStyle}>
       {modal === "login" && <Login closeModal={closeModal} />}
@@ -42,7 +45,7 @@ function Header({color, scrolled}) {
                   community
                 </a>
               </li>
-              {localStorage.getItem("token") == "" ? (
+              {localStorage.getItem("token") == null ? (
                 <>
                   <li onClick={openSignUp} className={style.menuItem}>
                     signup
@@ -53,10 +56,14 @@ function Header({color, scrolled}) {
                 </>
               ) : (
                 <>
-                  <li>
-                    <a href="#" className={style.menuItem}>
-                      logout
-                    </a>
+                  <li
+                    onClick={() => {
+                      localStorage.removeItem("token");
+                      setToken(null);
+                    }}
+                    className={style.menuItem}
+                  >
+                    logout
                   </li>
                   <li>
                     <a href="/mypage">
