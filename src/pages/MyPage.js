@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "../styles/MyPage.module.css";
-import Header2 from "../components/Header2";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
 import MyInfo from "../components/MyInfo";
@@ -17,7 +17,7 @@ const MyPage = () => {
 
     return (
         <div>
-            <Header2 />
+            <Header />
             <div id={style.mypageContainer}>
                 <div id={style.mypageTitle}>MY PAGE</div>
                 <div id={style.container}>
