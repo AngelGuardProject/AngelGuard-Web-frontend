@@ -19,30 +19,49 @@ function Main() {
     const scrollToProductSection = () => {
         productSectionRef.current.scrollIntoView({ behavior: "smooth" });
     };
+    const [age, setAge] = useState("");
     const [height, setHeight] = useState("");
     const [weight, setWeight] = useState("");
     const [message, setMessage] = useState("");
     const [submitted, setSubmitted] = useState(false);
 
+    const growthChart = {
+        "0-6": { height: [45, 75], weight: [2, 10] },
+        "7-12": { height: [70, 85], weight: [8, 12] },
+        "13-24": { height: [80, 95], weight: [9, 14] },
+        "25-36": { height: [85, 100], weight: [10, 16] },
+    };
+
     const handleSubmit = () => {
-        if (!height || !weight) {
-            alert("키와 몸무게를 모두 입력해주세요.");
+        if (!age || !height || !weight) {
+            alert("개월수, 키, 몸무게를 모두 입력해주세요.");
             return;
         }
 
         if (submitted) {
+            setAge("");
             setHeight("");
             setWeight("");
             setMessage("");
             setSubmitted(false);
         } else {
-            const heightInMeters = height / 100;
-            const bmi = weight / (heightInMeters * heightInMeters);
+            const ageGroup = Object.keys(growthChart).find((range) => {
+                const [min, max] = range.split("-").map(Number);
+                return age >= min && age <= max;
+            });
+
+            if (!ageGroup) {
+                setMessage("입력된 나이에 해당하는 성장 표준이 없습니다.");
+                setSubmitted(true);
+                return;
+            }
+
+            const { height: heightRange, weight: weightRange } = growthChart[ageGroup];
 
             let result;
-            if (bmi < 18.5) {
+            if (height < heightRange[0] || weight < weightRange[0]) {
                 result = "저체중입니다";
-            } else if (bmi >= 18.5 && bmi < 24.9) {
+            } else if (height <= heightRange[1] && weight <= weightRange[1]) {
                 result = "정상체중입니다";
             } else {
                 result = "과체중입니다";
@@ -130,11 +149,15 @@ function Main() {
             <section id={style.main3Section}>
                 <div className={style.bodyInputContainer}>
                     <div className={style.bodyImg}>
+                        <img src={require("../assets/age.png")} alt="" />
                         <img src={require("../assets/height.png")} alt="" />
                         <img src={require("../assets/kg.png")} alt="" />
                     </div>
                     <div id={style.bodyInputContainer}>
                         <div className={style.bodyInputBox}>
+                            <input className={style.bodyInput} type="text" value={age} onChange={(e) => setAge(e.target.value)} /> 개월
+                        </div>
+                        <div>
                             <input className={style.bodyInput} type="text" value={height} onChange={(e) => setHeight(e.target.value)} />
                             cm
                         </div>
@@ -155,11 +178,11 @@ function Main() {
                         <div className={style.depSub2}>Kids care service </div>
                     </div>
                     <div className={style.depContainer}>
-                        보건복지부와 대한소아과학회가 공동으로 약 10년마다 제정·발표하는 <br />
+                        • 보건복지부와 대한소아과학회가 공동으로 약 10년마다 제정·발표하는 <br />
                         「2017 소아청소년 성장도표」기준 아기성장 발달 계산기입니다.
                     </div>
                     <div className={style.depContainer}>
-                        자녀들의 성장 정도를 같은 또래의 다른 아이들과 비교해 볼 수 있고, <br />
+                        • 자녀들의 성장 정도를 같은 또래의 다른 아이들과 비교해 볼 수 있고, <br />
                         저신장, 저체중, 비만 등 소아청소년의 성장상태를 확인하실 수 있습니다. <br />
                         <div>질병관리청 2017 소아청소년성장도표를 기준으로 계산됩니다.</div>
                     </div>

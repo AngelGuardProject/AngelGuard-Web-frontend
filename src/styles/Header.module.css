@@ -45,6 +45,7 @@
 }
 
 .logo {
+    text-decoration: none;
     margin-left: 20px;
     font-weight: 700;
     font-size: 40px;
@@ -63,11 +64,19 @@
 }
 
 .menuItem {
-    margin-right: 67px;
+    margin-right: 52px;
     font-size: 20px;
     color: #666662;
     display: inline-block;
     text-decoration: none;
+}
+.menuImg {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 25px;
+    margin-top: 3px;
 }
 
 .menuItem2 {
