@@ -7,52 +7,69 @@ function SignUp({ closeModal }) {
     const [pw, setPw] = useState("");
     const [pwc, setPwc] = useState("");
     const [username, setUsername] = useState("");
-
-    const signUp = () => {
-        axios({
-            method: "post",
-            url: "http://louk342.iptime.org:3000/user/signUp",
-            data: {
-                username: username,
-                id: id,
-                pw: pw,
-            },
+  
+  const signUp = () => {
+    if (id == "") {
+      alert("아이디를 입력해주세요.");
+    }
+    if (pw == "") {
+      alert("비밀번호를 입력해주세요.");
+    }
+    if (pw != pwc) {
+      alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+    }
+    if (username == "") {
+      alert("닉네임을 입력해주세요.");
+    } else if (id != "" && pw != "" && pw == pwc && username != "") {
+      axios({
+        method: "post",
+        url: "http://louk342.iptime.org:3000/user/signUp",
+        data: {
+          username: username,
+          id: id,
+          pw: pw,
+        },
+      })
+        .then(res => {
+          console.log(res);
+          alert("회원가입에 성공하였습니다");
+          closeModal();
         })
-            .then((res) => {
-                console.log(res);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
-    return (
-        <div className={style.background}>
-            <div className={style.loginWrap}>
-                <div className={style.left}>
-                    <div className={style.logo}>AngelGuard</div>
-                </div>
-                <div className={style.right}>
-                    <div onClick={closeModal} className={style.XBtn}>
-                        <img src={require("../../assets/X.png")} />
-                    </div>
-                    <div className={style.loginForm}>
-                        <div className={style.loginTitle}>SignUp</div>
-                        <div style={{ marginBottom: "26px" }}>
-                            <label>
-                                아이디<span style={{ color: "red" }}>*</span>
-                            </label>
-                            <input
-                                type="text"
-                                name="id"
-                                value={id}
-                                onChange={(e) => {
-                                    setId(e.target.value);
-                                    console.log(id);
-                                }}
-                                className={style.id}
-                                placeholder="아이디를 입력해주세요."
-                            />
-                        </div>
+        .catch(err => {
+          console.log(err);
+        });
+    }
+  };
+
+  return (
+    <div className={style.background}>
+      <div className={style.loginWrap}>
+        <div className={style.left}>
+          <div className={style.logo}>AngelGuard</div>
+        </div>
+        <div className={style.right}>
+          <div onClick={closeModal} className={style.XBtn}>
+            <img src={require("../../assets/X.png")} />
+          </div>
+          <div className={style.loginForm}>
+            <div className={style.loginTitle}>SignUp</div>
+            <div style={{marginBottom: "26px"}}>
+              <label>
+                아이디<span style={{color: "red"}}>*</span>
+              </label>
+              <input
+                type="text"
+                name="id"
+                value={id}
+                onChange={e => {
+                  setId(e.target.value);
+                  console.log(id);
+                }}
+                className={style.id}
+                placeholder="아이디를 입력해주세요."
+              />
+            </div>
+
 
                         <div style={{ marginBottom: "26px" }}>
                             <label>
