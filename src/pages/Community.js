@@ -2,8 +2,26 @@ import {Link} from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import style from "../styles/Community.module.css";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
 function Community() {
+  const [board, setBoard] = useState([]);
+  const [page, setPage] = useState();
+
+  useEffect(() => {
+    axios
+      .get("http://louk342.iptime.org:3000/board/?page=page_num")
+      .then(res => {
+        console.log(res.data);
+        setPage(res.data.pageNum);
+        setBoard(res.data.contents);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <div>
       <Header color="#ffffff" scrolled={false} />
@@ -22,17 +40,17 @@ function Community() {
             <div className={style.w}>작성자</div>
           </div>
           <div className={style.contents}>
-            {data.map(item => (
+            {board.map(item => (
               <a
                 className={style.a}
-                key={item.no}
-                href={`/com-detail/${item.no}`}
+                key={item.board_id}
+                href={`/com-detail/${item.board_id}`}
               >
                 <div className={style.listContents}>
-                  <div className={style.no}>{item.no}</div>
-                  <div className={style.t}>{item.title}</div>
-                  <div className={style.date}>{item.date}</div>
-                  <div className={style.w}>{item.writer}</div>
+                  <div className={style.no}>{item.board_id}</div>
+                  <div className={style.t}>{item.board_title}</div>
+                  <div className={style.date}>{item.board_date}</div>
+                  <div className={style.w}>{item.user_nickname}</div>
                 </div>
               </a>
             ))}
