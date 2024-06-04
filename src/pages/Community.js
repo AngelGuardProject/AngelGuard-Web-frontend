@@ -11,9 +11,9 @@ function Community() {
 
   useEffect(() => {
     axios
-      .get("http://louk342.iptime.org:3000/board/?page=page_num")
+      .get("http://louk342.iptime.org:3000/board/?page=1")
       .then(res => {
-        console.log(res.data);
+        console.log(res);
         setPage(res.data.pageNum);
         setBoard(res.data.contents);
       })
@@ -33,12 +33,6 @@ function Community() {
         </div>
         <div className={style.boardCnt}>총 게시물 1004개</div>
         <div className={style.community}>
-          <div className={style.listHeader}>
-            <div className={style.no}>번호</div>
-            <div className={style.t}>제목</div>
-            <div className={style.date}>날짜</div>
-            <div className={style.w}>작성자</div>
-          </div>
           <div className={style.contents}>
             {board.map(item => (
               <a
@@ -47,10 +41,32 @@ function Community() {
                 href={`/com-detail/${item.board_id}`}
               >
                 <div className={style.listContents}>
-                  <div className={style.no}>{item.board_id}</div>
-                  <div className={style.t}>{item.board_title}</div>
-                  <div className={style.date}>{item.board_date}</div>
-                  <div className={style.w}>{item.user_nickname}</div>
+                  <div className={style.left}>
+                    <div className={style.left_top}>
+                      <img
+                        className={style.profile}
+                        src={require("../assets/mypage.png")}
+                      />
+                      <div>
+                        <div className={style.username}>
+                          {item.user_nickname}
+                        </div>
+                        <div className={style.date}>{item.board_date}</div>
+                      </div>
+                    </div>
+                    <div className={style.board_title}>{item.board_title}</div>
+                  </div>
+                  <div className={style.right}>
+                    <div className={style.like_count}>
+                      좋아요 {item.like_count}개
+                    </div>
+                    {item.board_thumbnail ? (
+                      <img
+                        className={style.thumbnail}
+                        src={item.board_thumbnail}
+                      />
+                    ) : null}
+                  </div>
                 </div>
               </a>
             ))}

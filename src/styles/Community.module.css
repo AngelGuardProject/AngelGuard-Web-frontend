@@ -33,26 +33,14 @@
   font-size: 15px;
   font-weight: 500;
   color: #8e857f;
-  width: 1055px;
+  width: 838px;
 
   margin: 56px auto 20px;
 }
 
 .community {
-  width: 1055px;
+  width: 838px;
   margin: auto;
-}
-
-.listHeader {
-  width: 100%;
-  height: 43px;
-  background-color: #fff4d6;
-  border-top: 1px solid #666662;
-  border-bottom: 1px solid #666662;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .contents {
@@ -60,37 +48,61 @@
 }
 
 .listContents {
-  width: 1055px;
-  height: 43px;
+  width: 100%;
+  height: 131px;
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #a6a6a6;
   align-items: center;
+}
+.left_top {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.username {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.date {
+  font-size: 12px;
+  color: #a6a6a6;
+  font-weight: 500;
+}
+
+.board_title {
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+}
+
+.right {
+  display: flex;
+}
+
+.like_count {
+  color: black;
+  font-size: 11px;
+  margin-top: 102px;
+}
+
+.thumbnail {
+  width: 99px;
+  height: 99px;
+  margin: 16px 11px 16px 23px;
 }
 
 .a {
   text-decoration: none;
-  color: #666662;
-}
-
-.no {
-  width: 10%;
-  text-align: center;
-}
-
-.t {
-  width: 50%;
-  text-align: center;
-}
-
-.date {
-  width: 20%;
-  text-align: center;
-}
-
-.w {
-  width: 20%;
-  text-align: center;
 }
 
 .writeBtn {
