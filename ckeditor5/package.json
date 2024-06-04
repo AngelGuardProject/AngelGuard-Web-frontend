@@ -11,7 +11,6 @@
     "@ckeditor/ckeditor5-autoformat": "41.4.2",
     "@ckeditor/ckeditor5-basic-styles": "41.4.2",
     "@ckeditor/ckeditor5-block-quote": "41.4.2",
-    "@ckeditor/ckeditor5-ckbox": "41.4.2",
     "@ckeditor/ckeditor5-cloud-services": "41.4.2",
     "@ckeditor/ckeditor5-editor-classic": "41.4.2",
     "@ckeditor/ckeditor5-essentials": "41.4.2",
@@ -23,8 +22,10 @@
     "@ckeditor/ckeditor5-media-embed": "41.4.2",
     "@ckeditor/ckeditor5-paragraph": "41.4.2",
     "@ckeditor/ckeditor5-paste-from-office": "41.4.2",
+    "@ckeditor/ckeditor5-table": "41.4.2",
     "@ckeditor/ckeditor5-typing": "41.4.2",
-    "@ckeditor/ckeditor5-undo": "41.4.2"
+    "@ckeditor/ckeditor5-undo": "41.4.2",
+    "@ckeditor/ckeditor5-upload": "41.4.2"
   },
   "devDependencies": {
     "@ckeditor/ckeditor5-core": "41.4.2",
