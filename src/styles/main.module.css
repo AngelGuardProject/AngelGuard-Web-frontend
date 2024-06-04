@@ -203,7 +203,7 @@ body {
     align-items: center;
 }
 .bodyDepContainer {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 #bodyInputContainer {
     display: flex;
@@ -243,20 +243,21 @@ body {
     margin-left: 12px;
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;
-    font-size: 30px;
-    font-weight: 300;
+    margin-bottom: 47px;
+    font-size: 40px;
+    font-weight: 400;
 }
 
 .depSub2 {
-    font-weight: 400;
+    font-weight: 300;
     margin-top: 18px;
-    font-size: 16px;
+    font-size: 20px;
     margin-left: 10px;
-    color: #666662;
+    color: #9c9c9c;
 }
 
 .depContainer {
+    font-size: 20px;
     margin-left: 15px;
     margin-top: 5px;
     text-align: left;
