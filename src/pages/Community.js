@@ -60,7 +60,7 @@ function Community() {
                     <div className={style.like_count}>
                       좋아요 {item.like_count}개
                     </div>
-                    {item.board_thumbnail ? (
+                    {item.board_thumbnail != "null" ? (
                       <img
                         className={style.thumbnail}
                         src={item.board_thumbnail}
