@@ -12,6 +12,7 @@
 
   letter-spacing: 0.5em;
   margin-bottom: 37px;
+  margin-top: 56px;
 }
 
 .smallTitle {
@@ -41,10 +42,6 @@
 .community {
   width: 838px;
   margin: auto;
-}
-
-.contents {
-  border-bottom: 1px solid #666662;
 }
 
 .listContents {
@@ -115,7 +112,7 @@
   font-weight: 700;
   border: none;
 
-  margin-left: 953px;
+  margin-left: 738px;
   margin-top: 19px;
 }
 
