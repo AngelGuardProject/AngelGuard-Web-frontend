@@ -1,44 +1,61 @@
+import React, { useState, useEffect } from "react";
 import style from "../styles/LikedPost.module.css";
+import axios from "axios";
 
 const LikedPost = () => {
-    // 예시 데이터
-    const likedPosts = [
-        { no: 1, title: "예시 작성글1", date: "2023.05.01", likes: 10, author: "엄마" },
-        { no: 2, title: "예시 작성글2", date: "2023.05.02", likes: 40, author: "엄마" },
-        { no: 3, title: "예시 작성글3 ", date: "2023.05.03", likes: 14, author: "엄마" },
-    ];
+    const [likedPosts, setLikedPosts] = useState([]);
+    const [page, setPage] = useState(1);
+    const user_login_id = localStorage.getItem("user_login_id");
+
+    useEffect(() => {
+        axios
+            .get(`http://louk342.iptime.org:3000/board/likedlist/${user_login_id}/?page=${page}`)
+            .then((res) => {
+                console.log(res);
+                setPage(res.data.pageNum);
+                setLikedPosts(res.data.contents);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, [page, user_login_id]);
 
     return (
         <div>
             <div className={style.contentTitle}>좋아요한 게시글</div>
-            <div className={style.totalLikedPosts}>좋아요한 게시글 1004</div>
-
-            <div className={style.postList}>
-                <div className={style.postHeader}>
-                    <span className={style.postNo}>번호</span>
-                    <span className={style.postTitle}>제목</span>
-                    <span className={style.postDate}>날짜</span>
-                    <span className={style.postLikes}>좋아요</span>
-                    <span className={style.postAuthor}>작성자</span>
+            <div className={style.totalLikedPosts}>좋아요한 게시글 {likedPosts.length}</div>
+            <div className={style.community}>
+                <div className={style.contents}>
+                    {likedPosts.map((post) => (
+                        <a className={style.a} key={post.board_id} href={`/com-detail/${post.board_id}`}>
+                            <div className={style.listContents}>
+                                <div className={style.left}>
+                                    <div className={style.left_top}>
+                                        <img className={style.profile} src={require("../assets/mypage.png")} />
+                                        <div>
+                                            <div className={style.username}>{post.user_nickname}</div>
+                                            <div className={style.date}>{post.board_date}</div>
+                                        </div>
+                                    </div>
+                                    <div className={style.board_title}>{post.board_title}</div>
+                                </div>
+                                <div className={style.right}>
+                                    <div className={style.like_count}>좋아요 {post.like_count}개</div>
+                                    {post.board_thumbnail ? <img className={style.thumbnail} src={post.board_thumbnail} /> : null}
+                                </div>
+                            </div>
+                        </a>
+                    ))}
                 </div>
-                {likedPosts.map((post) => (
-                    <div key={post.no} className={style.postItem}>
-                        <span className={style.postNo}>{post.no}</span>
-                        <span className={style.postTitle}>{post.title}</span>
-                        <span className={style.postDate}>{post.date}</span>
-                        <span className={style.postLikes}>{post.likes}</span>
-                        <span className={style.postAuthor}>{post.author}</span>
-                    </div>
-                ))}
-                <div className={style.pagination}>
-                    <span>&lt;</span>
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-                    <span>&gt;</span>
-                </div>
+            </div>
+            <div className={style.pagination}>
+                <span>&lt;</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>&gt;</span>
             </div>
         </div>
     );

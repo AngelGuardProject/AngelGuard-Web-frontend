@@ -1,12 +1,3 @@
-/* MyPost.module.css */
-
-@font-face {
-    font-family: "SUITE-Regular";
-    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-
 .contentTitle {
     position: absolute;
     top: 0;
@@ -19,7 +10,7 @@
 }
 
 .totalPosts {
-    margin-top: 15px;
+    margin-top: 40px;
     font-size: 15px;
     width: 706px;
     font-weight: 500;
@@ -42,80 +33,75 @@
     margin-bottom: 16px;
 }
 
-.postList {
-    margin-top: 10px;
+.a {
+    text-decoration: none;
+}
+.community {
     width: 706px;
-    height: 376px;
+    margin: auto;
 }
 
-.postHeader {
-    height: 34px;
+.listContents {
+    width: 100%;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #666662;
-    border-bottom: 1px solid #666662;
+    border-bottom: 1px #d9d9d9 solid;
+    margin-bottom: 5px;
 }
 
-.postHeader .postNo {
-    width: 70px; /* 번호의 폭 */
+.left_top {
+    display: flex;
+    margin-bottom: 15px;
 }
 
-.postHeader .postTitle {
-    width: 250px; /* 제목의 폭 */
+.profile {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
 }
 
-.postHeader .postDate {
-    width: 134px; /* 날짜의 폭 */
-}
-
-.postHeader .postLikes,
-.postHeader .postAuthor {
-    width: 66px; /* 좋아요, 작성자의 폭 */
-}
-
-.postHeader span {
+.username {
+    color: black;
     font-size: 16px;
-    flex: none; /* 자식 요소의 크기를 자동으로 조정하지 않도록 설정 */
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 2px;
 }
 
-.postItem {
-    height: 34px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #d9d9d9;
-}
-
-.postItem .postNo {
-    width: 70px; /* 번호의 폭 */
-}
-
-.postItem .postTitle {
-    width: 250px; /* 제목의 폭 */
-}
-
-.postItem .postDate {
-    width: 134px; /* 날짜의 폭 */
-}
-
-.postItem .postLikes,
-.postItem .postAuthor {
-    width: 66px; /* 좋아요, 작성자의 폭 */
-}
-.postItem .postDate,
-.postItem .postLikes,
-.postItem .postAuthor {
+.date {
+    font-size: 12px;
     color: #a6a6a6;
+    font-weight: 500;
 }
-.postItem span {
-    font-size: 14px;
-    flex: none; /* 자식 요소의 크기를 자동으로 조정하지 않도록 설정 */
+
+.board_title {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+}
+
+.right {
+    display: flex;
+}
+
+.like_count {
+    color: black;
+    font-size: 11px;
+    margin-top: 75px;
+}
+
+.thumbnail {
+    width: 70px;
+    height: 70px;
+    margin: 16px 11px 16px 23px;
 }
 
 .pagination {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .pagination span {

@@ -42,28 +42,29 @@ function Header({ color, scrolled }) {
                         <ul>
                             <li>
                                 <a href="/community" className={style.menuItem}>
-                                    community
+                                    Community
                                 </a>
                             </li>
                             {localStorage.getItem("token") == null ? (
                                 <>
                                     <li onClick={openSignUp} className={style.menuItem}>
-                                        signup
+                                        SignUp
                                     </li>
                                     <li onClick={openLogin} className={style.menuItem2}>
-                                        login
+                                        LogIn
                                     </li>
                                 </>
                             ) : (
                                 <>
                                     <li
                                         onClick={() => {
+                                            localStorage.removeItem("user_id");
                                             localStorage.removeItem("token");
                                             setToken(null);
                                         }}
                                         className={style.menuItem}
                                     >
-                                        logout
+                                        LogOut
                                     </li>
                                     <li>
                                         <a href="/mypage">
