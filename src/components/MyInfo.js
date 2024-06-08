@@ -1,11 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "../styles/MyInfo.module.css";
 import defaultProfileImage from "../assets/mypage.png";
-import cameraIcon from "../assets/camera-icon.png"; // 카메라 아이콘 이미지 경로
+import cameraIcon from "../assets/camera-icon.png";
+import axios from "axios";
 
 function MyInfo() {
     const [profileImage, setProfileImage] = useState(defaultProfileImage);
-    const [showImageInput, setShowImageInput] = useState(false);
+    const [userInfo, setUserInfo] = useState({
+        userId: "",
+        userNickname: "",
+    });
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        const user_login_id = localStorage.getItem("user_login_id");
+        console.log("TOKEN: ", token);
+        console.log("ID : ", user_login_id);
+
+        axios
+            .get(`http://louk342.iptime.org:3000/user/myprofile/${user_login_id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+            .then((res) => {
+                console.log(res);
+                const userData = res.data.data;
+                setUserInfo({
+                    userId: userData.user_login_id,
+                    userNickname: userData.user_nickname,
+                });
+            })
+            .catch((error) => {
+                console.error("Error :", error);
+            });
+    });
 
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
@@ -18,10 +47,6 @@ function MyInfo() {
         }
     };
 
-    const toggleImageInput = () => {
-        setShowImageInput(!showImageInput);
-    };
-
     return (
         <div>
             <div className={style.contentTitle}>내 정보 수정</div>
@@ -29,33 +54,22 @@ function MyInfo() {
                 <div className={style.profiles}>
                     <div className={style.profileImageContainer}>
                         <img src={profileImage} alt="Profile" className={style.profileImage} />
-                        <img
-                            src={cameraIcon}
-                            alt="Change profile"
-                            className={style.cameraIcon}
-                            onClick={toggleImageInput}
-                        />
+                        <label htmlFor="fileInput">
+                            <img src={cameraIcon} alt="Change profile" className={style.cameraIcon} />
+                        </label>
+                        <input id="fileInput" type="file" accept="image/*" onChange={handleImageUpload} className={style.fileInput} />
                     </div>
-                    {showImageInput && (
-                        <input
-                            type="file"
-                            accept="image/*"
-                            onChange={handleImageUpload}
-                            className={style.fileInput}
-                        />
-                    )}
-                    <div className={style.myInfoName}>혜림맘</div>
                 </div>
                 <div className={style.inputInfo}>
                     <div className={style.inputTitle}>닉네임</div>
                     <div>
-                        <input className={style.input} type="text" placeholder="혜림맘" />
+                        <input className={style.input} type="text" placeholder={userInfo.userNickname} readOnly />
                     </div>
                 </div>
                 <div className={style.inputInfo}>
                     <div className={style.inputTitle}>아이디</div>
                     <div>
-                        <input className={style.input} type="text" placeholder="yabvei" />
+                        <input className={style.input} type="text" placeholder={userInfo.userId} readOnly />
                     </div>
                 </div>
                 <div className={style.inputInfo}>

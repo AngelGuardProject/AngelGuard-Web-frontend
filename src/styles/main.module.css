@@ -50,7 +50,9 @@ body {
 #connectText {
     text-align: center;
 }
-
+#connectText img {
+    mask-image: linear-gradient(to top right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
 .connectText {
     margin-top: 30px;
     color: #666662;
