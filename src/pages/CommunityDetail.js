@@ -9,6 +9,7 @@ function CommunityDetail() {
   const params = useParams();
   const [data, setData] = useState("");
   const [comment, setComment] = useState("");
+  const [comments, setComments] = useState();
 
   useEffect(() => {
     axios
@@ -31,7 +32,8 @@ function CommunityDetail() {
         },
       })
       .then(res => {
-        console.log(res);
+        console.log(res.data.comments);
+        setComments(res.data.comments);
       })
       .catch(err => {
         console.log(err);
@@ -44,7 +46,7 @@ function CommunityDetail() {
         "http://louk342.iptime.org:3000/comment/write",
         {
           board_id: params.id,
-          user_id: "test",
+          user_login_id: "test",
           comment_content: comment,
         },
         {
@@ -110,19 +112,21 @@ function CommunityDetail() {
             </button>
           </div>
           <div className={style.comments}>
-            {/* {comment.map(item => (
-              <div className={style.comment}>
-                <div className={style.commentInfo}>
-                  <img
-                    className={style.profile}
-                    src={require("../assets/mypage.png")}
-                  />
-                  <div className={style.commentWriter}>{item.writer}</div>
-                  <div className={style.commentDate}>{item.date}</div>
+            {comments &&
+              comments.map(item => (
+                <div className={style.comment}>
+                  <div className={style.commentInfo}>
+                    <img className={style.profile} src={item.user_image} />
+                    <div className={style.commentWriter}>
+                      {item.user_nickname}
+                    </div>
+                    <div className={style.commentDate}>{item.comment_date}</div>
+                  </div>
+                  <div className={style.commentContent}>
+                    {item.comment_content}
+                  </div>
                 </div>
-                <div className={style.commentContent}>{item.content}</div>
-              </div>
-            ))} */}
+              ))}
           </div>
           <a className={style.a} href="/community">
             <div className={style.backBtn}>목록</div>
@@ -135,93 +139,3 @@ function CommunityDetail() {
 }
 
 export default CommunityDetail;
-
-const data = [
-  {
-    no: "1",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "2",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "3",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "4",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "5",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "6",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "7",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "8",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "9",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "10",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-];
-
-const comment = [
-  {
-    writer: "예빈맘",
-    date: "2024.05.27 13:20PM",
-    content:
-      "개인적으로는 P사의 돌려돌려돌림판이 좋은것 같더라구요 실리콘 재질이라 세균 번식이 적고 세척이 쉬워서 저는 좋았어요 ㅎㅎ",
-  },
-  {
-    writer: "예빈맘",
-    date: "2024.05.27 13:20PM",
-    content:
-      "개인적으로는 P사의 돌려돌려돌림판이 좋은것 같더라구요 실리콘 재질이라 세균 번식이 적고 세척이 쉬워서 저는 좋았어요 ㅎㅎ",
-  },
-  {
-    writer: "예빈맘",
-    date: "2024.05.27 13:20PM",
-    content:
-      "개인적으로는 P사의 돌려돌려돌림판이 좋은것 같더라구요 실리콘 재질이라 세균 번식이 적고 세척이 쉬워서 저는 좋았어요 ㅎㅎ",
-  },
-  {
-    writer: "예빈맘",
-    date: "2024.05.27 13:20PM",
-    content:
-      "개인적으로는 P사의 돌려돌려돌림판이 좋은것 같더라구요 실리콘 재질이라 세균 번식이 적고 세척이 쉬워서 저는 좋았어요 ㅎㅎ",
-  },
-];

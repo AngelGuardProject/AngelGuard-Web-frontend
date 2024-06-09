@@ -11,7 +11,7 @@ function Community() {
 
   useEffect(() => {
     axios
-      .get("http://louk342.iptime.org:3000/board/?page=1")
+      .get("http://louk342.iptime.org:3000/board/?page=2")
       .then(res => {
         console.log(res);
         setPage(res.data.pageNum);
