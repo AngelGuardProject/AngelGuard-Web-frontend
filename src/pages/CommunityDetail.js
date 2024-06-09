@@ -23,6 +23,19 @@ function CommunityDetail() {
       .catch(err => {
         console.log(err);
       });
+
+    axios
+      .get(`http://louk342.iptime.org:3000/comment/${params.id}`, {
+        params: {
+          board_id: params.id,
+        },
+      })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }, []);
 
   const addComment = () => {
@@ -33,12 +46,12 @@ function CommunityDetail() {
           board_id: params.id,
           user_id: "test",
           comment_content: comment,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
-        // {
-        //   headers: {
-        //     Authorization: localStorage.getItem("token"),
-        //   },
-        // }
       )
       .then(res => {
         console.log(res);
