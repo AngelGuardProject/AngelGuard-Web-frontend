@@ -12,11 +12,10 @@ function MyInfo() {
     const [password, setPassword] = useState("");
     const [newNickname, setNewNickname] = useState("");
     const [profileImage, setProfileImage] = useState(defaultProfileImage);
+    const token = localStorage.getItem("token");
+    const user_login_id = localStorage.getItem("user_login_id");
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
-        const user_login_id = localStorage.getItem("user_login_id");
-
         axios
             .get(`http://louk342.iptime.org:3000/user/myprofile/${user_login_id}`, {
                 headers: {
@@ -35,7 +34,7 @@ function MyInfo() {
             .catch((error) => {
                 console.error("Error :", error);
             });
-    }, []);
+    }, [token, user_login_id]);
 
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
@@ -49,9 +48,6 @@ function MyInfo() {
     };
 
     const handleUpdateUserInfo = () => {
-        const token = localStorage.getItem("token");
-        const user_login_id = localStorage.getItem("user_login_id");
-
         const updatedUserInfo = {
             pw: password,
             username: newNickname || userInfo.userNickname,
