@@ -5,17 +5,17 @@ import cameraIcon from "../assets/camera-icon.png";
 import axios from "axios";
 
 function MyInfo() {
-    const [profileImage, setProfileImage] = useState(defaultProfileImage);
     const [userInfo, setUserInfo] = useState({
         userId: "",
         userNickname: "",
     });
+    const [password, setPassword] = useState("");
+    const [newNickname, setNewNickname] = useState("");
+    const [profileImage, setProfileImage] = useState(defaultProfileImage);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
         const user_login_id = localStorage.getItem("user_login_id");
-        console.log("TOKEN: ", token);
-        console.log("ID : ", user_login_id);
 
         axios
             .get(`http://louk342.iptime.org:3000/user/myprofile/${user_login_id}`, {
@@ -26,6 +26,7 @@ function MyInfo() {
             .then((res) => {
                 console.log(res);
                 const userData = res.data.data;
+                console.log(res.data.data);
                 setUserInfo({
                     userId: userData.user_login_id,
                     userNickname: userData.user_nickname,
@@ -34,7 +35,7 @@ function MyInfo() {
             .catch((error) => {
                 console.error("Error :", error);
             });
-    });
+    }, []);
 
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
@@ -45,6 +46,33 @@ function MyInfo() {
             };
             reader.readAsDataURL(file);
         }
+    };
+
+    const handleUpdateUserInfo = () => {
+        const token = localStorage.getItem("token");
+        const user_login_id = localStorage.getItem("user_login_id");
+
+        const updatedUserInfo = {
+            pw: password,
+            username: newNickname || userInfo.userNickname,
+        };
+
+        axios
+            .post(`http://louk342.iptime.org:3000/user/update/${user_login_id}`, updatedUserInfo, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+            .then((res) => {
+                console.log("User info updated successfully:", res);
+                setUserInfo((prevUserInfo) => ({
+                    ...prevUserInfo,
+                    userNickname: newNickname || prevUserInfo.userNickname,
+                }));
+            })
+            .catch((error) => {
+                console.error("Error updating user info:", error);
+            });
     };
 
     return (
@@ -63,23 +91,30 @@ function MyInfo() {
                 <div className={style.inputInfo}>
                     <div className={style.inputTitle}>닉네임</div>
                     <div>
-                        <input className={style.input} type="text" placeholder={userInfo.userNickname} readOnly />
+                        <input
+                            className={style.input}
+                            type="text"
+                            value={newNickname || userInfo.userNickname}
+                            onChange={(e) => setNewNickname(e.target.value)}
+                        />
                     </div>
                 </div>
                 <div className={style.inputInfo}>
                     <div className={style.inputTitle}>아이디</div>
                     <div>
-                        <input className={style.input} type="text" placeholder={userInfo.userId} readOnly />
+                        <input className={style.input} type="text" value={userInfo.userId} readOnly />
                     </div>
                 </div>
                 <div className={style.inputInfo}>
                     <div className={style.inputTitle}>비밀번호</div>
                     <div>
-                        <input className={style.input} type="password" placeholder="*********" />
+                        <input className={style.input} type="password" placeholder="*********" onChange={(e) => setPassword(e.target.value)} />
                     </div>
                 </div>
                 <div className={style.btnBox}>
-                    <button className={`${style.btn} ${style.edit}`}>수정</button>
+                    <button className={`${style.btn} ${style.edit}`} onClick={handleUpdateUserInfo}>
+                        수정
+                    </button>
                     <button className={`${style.btn} ${style.cancel}`}>취소</button>
                 </div>
             </div>
