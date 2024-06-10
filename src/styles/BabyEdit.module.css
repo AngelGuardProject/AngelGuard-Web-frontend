@@ -187,9 +187,9 @@ input:focus {
     border: none;
 }
 
-#cancle {
+#cancel {
     background-color: #ffffff;
-    border: 2px solid #a6a6a6;
+    border: 1px solid #a6a6a6;
 }
 #radio[type="radio"]:checked + label::before {
     background-color: black;

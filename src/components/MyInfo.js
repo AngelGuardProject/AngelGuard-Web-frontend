@@ -23,27 +23,52 @@ function MyInfo() {
                 },
             })
             .then((res) => {
-                console.log(res);
                 const userData = res.data.data;
-                console.log(res.data.data);
                 setUserInfo({
                     userId: userData.user_login_id,
                     userNickname: userData.user_nickname,
                 });
             })
             .catch((error) => {
-                console.error("Error :", error);
+                console.error("Error fetching user info:", error);
+            });
+
+        axios
+            .post(`http://louk342.iptime.org:3000/image/porfile/${user_login_id}`, null, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+            .then((res) => {
+                const userImage = res.data.result[0].user_image;
+                setProfileImage(userImage || defaultProfileImage);
+            })
+            .catch((error) => {
+                console.error("Error fetching profile image:", error);
             });
     }, [token, user_login_id]);
 
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
         if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setProfileImage(reader.result);
-            };
-            reader.readAsDataURL(file);
+            const formData = new FormData();
+            formData.append("image", file);
+
+            axios
+                .post(`http://louk342.iptime.org:3000/image/upload/${user_login_id}`, formData, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-Type": "multipart/form-data",
+                    },
+                })
+                .then((res) => {
+                    alert("이미지가 업로드 되었습니다.");
+                    const imageUrl = res.data.result.user_image;
+                    setProfileImage(imageUrl);
+                })
+                .catch((error) => {
+                    console.error("Error uploading image:", error);
+                });
         }
     };
 
@@ -60,7 +85,7 @@ function MyInfo() {
                 },
             })
             .then((res) => {
-                console.log("User info updated successfully:", res);
+                alert("수정되었습니다.");
                 setUserInfo((prevUserInfo) => ({
                     ...prevUserInfo,
                     userNickname: newNickname || prevUserInfo.userNickname,
