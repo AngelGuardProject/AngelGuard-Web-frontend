@@ -7,11 +7,11 @@ import axios from "axios";
 
 function Community() {
   const [board, setBoard] = useState([]);
-  const [page, setPage] = useState();
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     axios
-      .get("http://louk342.iptime.org:3000/board/?page=1")
+      .get(`http://louk342.iptime.org:3000/board/?page=${page}`)
       .then(res => {
         console.log(res);
         setPage(res.data.pageNum);
@@ -45,7 +45,11 @@ function Community() {
                     <div className={style.left_top}>
                       <img
                         className={style.profile}
-                        src={require("../assets/mypage.png")}
+                        src={
+                          item.user_image == "null"
+                            ? require("../assets/mypage.png")
+                            : item.user_image
+                        }
                       />
                       <div>
                         <div className={style.username}>
@@ -60,7 +64,7 @@ function Community() {
                     <div className={style.like_count}>
                       좋아요 {item.like_count}개
                     </div>
-                    {item.board_thumbnail ? (
+                    {item.board_thumbnail != "null" ? (
                       <img
                         className={style.thumbnail}
                         src={item.board_thumbnail}
@@ -81,66 +85,3 @@ function Community() {
 }
 
 export default Community;
-
-const data = [
-  {
-    no: "1",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "2",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "3",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "4",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "5",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "6",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "7",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "8",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "9",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-  {
-    no: "10",
-    title: "아이 장난감 추천",
-    date: "2024.04.01",
-    writer: "마미",
-  },
-];
