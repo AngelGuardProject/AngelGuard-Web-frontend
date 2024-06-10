@@ -116,7 +116,14 @@ function CommunityDetail() {
               comments.map(item => (
                 <div className={style.comment}>
                   <div className={style.commentInfo}>
-                    <img className={style.profile} src={item.user_image} />
+                    {item.user_image == "null" ? (
+                      <img
+                        className={style.profile}
+                        src={require("../assets/mypage.png")}
+                      />
+                    ) : (
+                      <img className={style.profile} src={data.user_image} />
+                    )}
                     <div className={style.commentWriter}>
                       {item.user_nickname}
                     </div>
