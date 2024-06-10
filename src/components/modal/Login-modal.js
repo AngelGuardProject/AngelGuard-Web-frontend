@@ -2,7 +2,7 @@ import {useState} from "react";
 import style from "../../styles/Login.module.css";
 import axios from "axios";
 
-function Login({closeModal}) {
+function Login({closeModal, openSignUp}) {
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
 
@@ -19,7 +19,15 @@ function Login({closeModal}) {
         closeModal();
       })
       .catch(err => {
-        console.log(err);
+        if (err.response.status == 403) {
+          alert("아이디와 비밀번호를 입력해주세요.");
+        }
+        if (err.response.status == 406) {
+          alert("비밀번호가 일치하지 않습니다.");
+        }
+        if (err.response.status == 405) {
+          alert("존재하지 않는 아이디입니다.");
+        }
       });
   };
   return (
@@ -56,7 +64,13 @@ function Login({closeModal}) {
             <button onClick={login} className={style.loginBtn}>
               Login
             </button>
-            <div className={style.moveRegister}>
+            <div
+              onClick={() => {
+                closeModal();
+                openSignUp();
+              }}
+              className={style.moveRegister}
+            >
               아이디가 없다면? 회원가입 하러가기
             </div>
           </div>
