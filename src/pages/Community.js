@@ -9,7 +9,7 @@ import PageNation from "../components/PageNation";
 function Community() {
   const [board, setBoard] = useState([]);
   const [page, setPage] = useState(1);
-  const [total, setTotal] = useState();
+  const [total, setTotal] = useState({});
 
   const navigate = useNavigate();
 
@@ -18,7 +18,7 @@ function Community() {
       .get(`http://louk342.iptime.org:3000/board/?page=${page}`)
       .then(res => {
         console.log(res.data);
-        setTotal(res.data.totalCount);
+        setTotal(res.data);
         setBoard(res.data.contents);
       })
       .catch(err => {
@@ -35,7 +35,7 @@ function Community() {
           <div className={style.smallTitle}>부모님들의 소통 커뮤니티</div>
           <div className={style.line}></div>
         </div>
-        <div className={style.boardCnt}>총 게시물 {total}개</div>
+        <div className={style.boardCnt}>총 게시물 개</div>
         <div className={style.community}>
           <div className={style.contents}>
             {board.map(item => (
@@ -91,7 +91,12 @@ function Community() {
           >
             작성하기
           </button>
-          <PageNation />
+          <PageNation
+            pnStart={total.pnStart}
+            pnTotal={total.pnTotal}
+            setPage={setPage}
+            page={page}
+          />
         </div>
       </div>
       <Footer />
