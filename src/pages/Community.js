@@ -35,7 +35,7 @@ function Community() {
           <div className={style.smallTitle}>부모님들의 소통 커뮤니티</div>
           <div className={style.line}></div>
         </div>
-        <div className={style.boardCnt}>총 게시물 개</div>
+        <div className={style.boardCnt}>총 게시물 {total.totalCount}개</div>
         <div className={style.community}>
           <div className={style.contents}>
             {board.map(item => (

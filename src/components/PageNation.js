@@ -28,7 +28,9 @@ function PageNation({pnStart, pnTotal, setPage, page}) {
           <div
             style={{
               cursor: "pointer",
-              fontWeight: page === item ? "bold" : "normal",
+              fontWeight: page === item ? "bold" : "lighter",
+              color: "#666662",
+              fontSize: "15px",
             }}
             onClick={() => {
               setPage(item);
