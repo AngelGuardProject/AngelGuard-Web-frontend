@@ -1,26 +1,30 @@
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import style from "../styles/Community.module.css";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import PageNation from "../components/PageNation";
 
 function Community() {
   const [board, setBoard] = useState([]);
   const [page, setPage] = useState(1);
+  const [total, setTotal] = useState();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
       .get(`http://louk342.iptime.org:3000/board/?page=${page}`)
       .then(res => {
-        console.log(res);
-        setPage(res.data.pageNum);
+        console.log(res.data);
+        setTotal(res.data.totalCount);
         setBoard(res.data.contents);
       })
       .catch(err => {
         console.log(err);
       });
-  }, []);
+  }, [page]);
 
   return (
     <div>
@@ -31,7 +35,7 @@ function Community() {
           <div className={style.smallTitle}>부모님들의 소통 커뮤니티</div>
           <div className={style.line}></div>
         </div>
-        <div className={style.boardCnt}>총 게시물 1004개</div>
+        <div className={style.boardCnt}>총 게시물 {total}개</div>
         <div className={style.community}>
           <div className={style.contents}>
             {board.map(item => (
@@ -75,8 +79,19 @@ function Community() {
               </a>
             ))}
           </div>
-          <button className={style.writeBtn}>작성하기</button>
-          <div className={style.pagenation}></div>
+          <button
+            onClick={() => {
+              if (localStorage.getItem("token")) {
+                navigate("/write");
+              } else {
+                alert("로그인 후 이용할 수 있는 컨텐츠입니다.");
+              }
+            }}
+            className={style.writeBtn}
+          >
+            작성하기
+          </button>
+          <PageNation />
         </div>
       </div>
       <Footer />
