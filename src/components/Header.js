@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import style from "../styles/Header.module.css";
 import Login from "./modal/Login-modal";
 import SignUp from "./modal/SignUp-modal";
+import axios from "axios";
 
 function Header({color, scrolled}) {
   const [modal, setModal] = useState();
@@ -25,6 +26,21 @@ function Header({color, scrolled}) {
     left: 0,
     right: 0,
     zIndex: 999,
+  };
+
+  const logout = () => {
+    axios
+      .post("http://louk342.iptime.org:3000/user/logout", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   useEffect(() => {}, [token]);
@@ -65,6 +81,7 @@ function Header({color, scrolled}) {
                       localStorage.removeItem("user_login_id");
                       localStorage.removeItem("token");
                       setToken(null);
+                      logout();
                     }}
                     className={style.menuItem}
                   >

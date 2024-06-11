@@ -76,7 +76,7 @@ function CommunityDetail() {
             <div className={style.writeContent}>
               <div className={style.left}>
                 <div className={style.writerBox}>
-                  {data.user_image == "null" ? (
+                  {data.user_image == null ? (
                     <img
                       className={style.profile}
                       src={require("../assets/mypage.png")}
@@ -118,13 +118,13 @@ function CommunityDetail() {
               comments.map(item => (
                 <div className={style.comment}>
                   <div className={style.commentInfo}>
-                    {item.user_image == "null" ? (
+                    {item.user_image == null ? (
                       <img
                         className={style.profile}
                         src={require("../assets/mypage.png")}
                       />
                     ) : (
-                      <img className={style.profile} src={data.user_image} />
+                      <img className={style.profile} src={item.user_image} />
                     )}
                     <div className={style.commentWriter}>
                       {item.user_nickname}

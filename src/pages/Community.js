@@ -22,7 +22,9 @@ function Community() {
         setBoard(res.data.contents);
       })
       .catch(err => {
-        console.log(err);
+        if (err.response.status == 404) {
+          setBoard(null);
+        }
       });
   }, [page]);
 
@@ -38,46 +40,54 @@ function Community() {
         <div className={style.boardCnt}>총 게시물 {total.totalCount}개</div>
         <div className={style.community}>
           <div className={style.contents}>
-            {board.map(item => (
-              <a
-                className={style.a}
-                key={item.board_id}
-                href={`/com-detail/${item.board_id}`}
-              >
-                <div className={style.listContents}>
-                  <div className={style.left}>
-                    <div className={style.left_top}>
-                      <img
-                        className={style.profile}
-                        src={
-                          item.user_image == "null"
-                            ? require("../assets/mypage.png")
-                            : item.user_image
-                        }
-                      />
-                      <div>
-                        <div className={style.username}>
-                          {item.user_nickname}
+            {board ? (
+              board.map(item => (
+                <a
+                  className={style.a}
+                  key={item.board_id}
+                  href={`/com-detail/${item.board_id}`}
+                >
+                  <div className={style.listContents}>
+                    <div className={style.left}>
+                      <div className={style.left_top}>
+                        <img
+                          className={style.profile}
+                          src={
+                            item.user_image == null
+                              ? require("../assets/mypage.png")
+                              : item.user_image
+                          }
+                        />
+                        <div>
+                          <div className={style.username}>
+                            {item.user_nickname}
+                          </div>
+                          <div className={style.date}>{item.board_date}</div>
                         </div>
-                        <div className={style.date}>{item.board_date}</div>
+                      </div>
+                      <div className={style.board_title}>
+                        {item.board_title}
                       </div>
                     </div>
-                    <div className={style.board_title}>{item.board_title}</div>
-                  </div>
-                  <div className={style.right}>
-                    <div className={style.like_count}>
-                      좋아요 {item.like_count}개
+                    <div className={style.right}>
+                      <div className={style.like_count}>
+                        좋아요 {item.like_count}개
+                      </div>
+                      {item.board_thumbnail == "null" ? null : (
+                        <img
+                          className={style.thumbnail}
+                          src={item.board_thumbnail}
+                        />
+                      )}
                     </div>
-                    {item.board_thumbnail != "null" ? (
-                      <img
-                        className={style.thumbnail}
-                        src={item.board_thumbnail}
-                      />
-                    ) : null}
                   </div>
-                </div>
-              </a>
-            ))}
+                </a>
+              ))
+            ) : (
+              <div className={style.community_null}>
+                게시글이 존재하지 않습니다
+              </div>
+            )}
           </div>
           <button
             onClick={() => {
