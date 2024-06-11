@@ -1,4 +1,4 @@
-import {Link, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import Header from "../components/Header";
 import style from "../styles/CommunityDetail.module.css";
 import Footer from "../components/Footer";
@@ -46,7 +46,7 @@ function CommunityDetail() {
         "http://louk342.iptime.org:3000/comment/write",
         {
           board_id: params.id,
-          user_login_id: "test",
+          user_login_id: localStorage.getItem("user_login_id"),
           comment_content: comment,
         },
         {
@@ -57,9 +57,12 @@ function CommunityDetail() {
       )
       .then(res => {
         console.log(res);
+        window.location.reload();
       })
       .catch(err => {
         console.log(err);
+        alert("로그인이 필요한 컨텐츠입니다.");
+        window.location.reload();
       });
   };
 
@@ -101,7 +104,6 @@ function CommunityDetail() {
                 name="comment"
                 onChange={e => {
                   setComment(e.target.value);
-                  console.log(comment);
                 }}
                 className={style.input}
                 placeholder="커뮤니티에서는 바른말만 사용해주세요"
@@ -140,7 +142,7 @@ function CommunityDetail() {
           </a>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

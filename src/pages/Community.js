@@ -91,12 +91,7 @@ function Community() {
           >
             작성하기
           </button>
-          <PageNation
-            pnStart={total.pnStart}
-            pnTotal={total.pnTotal}
-            setPage={setPage}
-            page={page}
-          />
+          <PageNation pnTotal={total.pnTotal} setPage={setPage} page={page} />
         </div>
       </div>
       <Footer />

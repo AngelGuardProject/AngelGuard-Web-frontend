@@ -62,7 +62,7 @@ function Header({color, scrolled}) {
                 <>
                   <li
                     onClick={() => {
-                      localStorage.removeItem("user_id");
+                      localStorage.removeItem("user_login_id");
                       localStorage.removeItem("token");
                       setToken(null);
                     }}

@@ -1,4 +1,4 @@
-function PageNation({pnStart, pnTotal, setPage, page}) {
+function PageNation({pnTotal, setPage, page}) {
   const pages = [];
   for (let i = 1; i <= pnTotal; i++) {
     pages.push(i);
