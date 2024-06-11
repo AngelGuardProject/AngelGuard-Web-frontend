@@ -10,7 +10,7 @@
 }
 
 .totalPosts {
-    margin-top: 40px;
+    margin-top: 20px;
     font-size: 15px;
     width: 706px;
     font-weight: 500;
@@ -20,6 +20,7 @@
 }
 
 .writeBtn {
+    margin-bottom: 10px;
     padding: 2px;
     width: 94px;
     height: 27px;
@@ -30,13 +31,13 @@
     background-color: #fff4d6;
     color: #666662;
     border: none;
-    margin-bottom: 16px;
 }
 
 .a {
     text-decoration: none;
 }
 .community {
+    height: 450px;
     width: 706px;
     margin: auto;
 }
@@ -59,6 +60,7 @@
 .profile {
     width: 40px;
     height: 40px;
+    border-radius: 30px;
     margin-right: 20px;
 }
 
@@ -75,12 +77,12 @@
     color: #a6a6a6;
     font-weight: 500;
 }
-
 .board_title {
     text-align: left;
     font-size: 18px;
     font-weight: 500;
     color: black;
+    margin-bottom: 10px;
 }
 
 .right {
@@ -90,7 +92,7 @@
 .like_count {
     color: black;
     font-size: 11px;
-    margin-top: 75px;
+    margin-top: 60px;
 }
 
 .thumbnail {
@@ -98,10 +100,12 @@
     height: 70px;
     margin: 16px 11px 16px 23px;
 }
-
+.noPostsMessage {
+    font-size: 16px;
+    color: #666662;
+}
 .pagination {
     text-align: center;
-    margin-top: 30px;
 }
 
 .pagination span {

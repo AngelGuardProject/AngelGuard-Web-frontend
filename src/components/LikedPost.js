@@ -5,6 +5,7 @@ import axios from "axios";
 const LikedPost = () => {
     const [likedPosts, setLikedPosts] = useState([]);
     const [page, setPage] = useState(1);
+
     const user_login_id = localStorage.getItem("user_login_id");
 
     useEffect(() => {
@@ -26,26 +27,36 @@ const LikedPost = () => {
             <div className={style.totalLikedPosts}>좋아요한 게시글 {likedPosts.length}</div>
             <div className={style.community}>
                 <div className={style.contents}>
-                    {likedPosts.map((post) => (
-                        <a className={style.a} key={post.board_id} href={`/com-detail/${post.board_id}`}>
-                            <div className={style.listContents}>
-                                <div className={style.left}>
-                                    <div className={style.left_top}>
-                                        <img className={style.profile} src={require("../assets/mypage.png")} />
-                                        <div>
-                                            <div className={style.username}>{post.user_nickname}</div>
-                                            <div className={style.date}>{post.board_date}</div>
+                    {likedPosts.length > 0 ? (
+                        likedPosts.map((post) => (
+                            <a className={style.a} key={post.board_id} href={`/com-detail/${post.board_id}`}>
+                                <div className={style.listContents}>
+                                    <div className={style.left}>
+                                        <div className={style.left_top}>
+                                            <img
+                                                className={style.profile}
+                                                src={
+                                                    post.user_image && post.user_image !== "null" ? post.user_image : require("../assets/mypage.png")
+                                                }
+                                                alt="profile"
+                                            />
+                                            <div>
+                                                <div className={style.username}>{post.user_nickname}</div>
+                                                <div className={style.date}>{post.board_date}</div>
+                                            </div>
                                         </div>
+                                        <div className={style.board_title}>{post.board_title}</div>
                                     </div>
-                                    <div className={style.board_title}>{post.board_title}</div>
+                                    <div className={style.right}>
+                                        <div className={style.like_count}>좋아요 {post.like_count}개</div>
+                                        {post.board_thumbnail ? <img className={style.thumbnail} src={post.board_thumbnail} /> : null}
+                                    </div>
                                 </div>
-                                <div className={style.right}>
-                                    <div className={style.like_count}>좋아요 {post.like_count}개</div>
-                                    {post.board_thumbnail ? <img className={style.thumbnail} src={post.board_thumbnail} /> : null}
-                                </div>
-                            </div>
-                        </a>
-                    ))}
+                            </a>
+                        ))
+                    ) : (
+                        <div className={style.noPostsMessage}>아직 좋아요한 게시글이 없습니다.</div>
+                    )}
                 </div>
             </div>
             <div className={style.pagination}>
