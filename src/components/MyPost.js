@@ -2,10 +2,15 @@ import React, { useState, useEffect } from "react";
 import style from "../styles/MyPost.module.css";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import MyPageNation from "./MyPageNation";
+
 const MyPost = () => {
     const navigate = useNavigate();
     const [myPosts, setMyPosts] = useState([]);
     const [page, setPage] = useState(1);
+    const [totalPosts, setTotalPosts] = useState(0);
+    const [pnTotal, setPnTotal] = useState(1); // Add state for total pages
+
     const user_login_id = localStorage.getItem("user_login_id");
 
     useEffect(() => {
@@ -13,8 +18,9 @@ const MyPost = () => {
             .get(`http://louk342.iptime.org:3000/board/postedlist/${user_login_id}/?page=${page}`)
             .then((res) => {
                 console.log(res);
-                setPage(res.data.pageNum);
                 setMyPosts(res.data.contents);
+                setTotalPosts(res.data.totalCount); // Update totalPosts state with totalCount from the response
+                setPnTotal(res.data.pnTotal); // Update pnTotal state with total pages from the response
             })
             .catch((err) => {
                 console.log(err);
@@ -25,7 +31,7 @@ const MyPost = () => {
         <div>
             <div className={style.contentTitle}>게시글 조회</div>
             <div className={style.topInfoContainer}>
-                <div className={style.totalPosts}>총 게시글 {myPosts.length}</div>
+                <div className={style.totalPosts}>총 게시글 {totalPosts}</div> {/* Use totalPosts state here */}
                 <div className={style.postInfo}>
                     <button
                         onClick={() => {
@@ -72,15 +78,11 @@ const MyPost = () => {
                         <div className={style.noPostsMessage}>아직 작성한 게시글이 없습니다.</div>
                     )}
                 </div>
-            </div>
-            <div className={style.pagination}>
-                <span>&lt;</span>
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>5</span>
-                <span>&gt;</span>
+                {totalPosts > 0 && ( 
+                    <div className={style.pagination}>
+                        <MyPageNation pnTotal={pnTotal} setPage={setPage} page={page} /> {/* MyPageNation에 props 전달 */}
+                    </div>
+                )}
             </div>
         </div>
     );

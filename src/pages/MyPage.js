@@ -10,16 +10,9 @@ import LikedPost from "../components/LikedPost";
 
 const MyPage = () => {
     const [activeMenuItem, setActiveMenuItem] = useState("내 정보 수정");
-    const [contentHeight, setContentHeight] = useState("");
 
     const handleMenuItemClick = (item) => {
         setActiveMenuItem(item);
-
-        if (item === "게시글 조회" || item === "좋아요한 게시글") {
-            setContentHeight("650px");
-        } else {
-            setContentHeight("");
-        }
     };
 
     return (
@@ -29,8 +22,7 @@ const MyPage = () => {
                 <div id={style.mypageTitle}>MY PAGE</div>
                 <div id={style.container}>
                     <Sidebar onMenuItemClick={handleMenuItemClick} />
-                    {/* Apply dynamic height to content */}
-                    <div id={style.content} style={{ height: contentHeight }}>
+                    <div id={style.content}>
                         {activeMenuItem === "내 정보 수정" && <MyInfo />}
                         {activeMenuItem === "아기 정보 수정" && <BabyInfo />}
                         {activeMenuItem === "게시글 조회" && <MyPost />}
