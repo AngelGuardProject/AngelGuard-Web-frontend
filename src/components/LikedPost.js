@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import style from "../styles/LikedPost.module.css";
 import axios from "axios";
+import MyPageNation from "./MyPageNation";
 
 const LikedPost = () => {
     const [likedPosts, setLikedPosts] = useState([]);
     const [page, setPage] = useState(1);
+    const [totalPosts, setTotalPosts] = useState(0);
+    const [pnTotal, setPnTotal] = useState(1);
 
     const user_login_id = localStorage.getItem("user_login_id");
 
@@ -15,6 +18,8 @@ const LikedPost = () => {
                 console.log(res);
                 setPage(res.data.pageNum);
                 setLikedPosts(res.data.contents);
+                setTotalPosts(res.data.totalCount);
+                setPnTotal(res.data.pnTotal);
             })
             .catch((err) => {
                 console.log(err);
@@ -24,7 +29,7 @@ const LikedPost = () => {
     return (
         <div>
             <div className={style.contentTitle}>좋아요한 게시글</div>
-            <div className={style.totalLikedPosts}>좋아요한 게시글 {likedPosts.length}</div>
+            <div className={style.totalLikedPosts}>좋아요한 게시글 {totalPosts}</div> {/* totalPosts 상태 사용 */}
             <div className={style.community}>
                 <div className={style.contents}>
                     {likedPosts.length > 0 ? (
@@ -49,7 +54,7 @@ const LikedPost = () => {
                                     </div>
                                     <div className={style.right}>
                                         <div className={style.like_count}>좋아요 {post.like_count}개</div>
-                                        {post.board_thumbnail ? <img className={style.thumbnail} src={post.board_thumbnail} /> : null}
+                                        {post.board_thumbnail ? <img className={style.thumbnail} src={post.board_thumbnail} alt="thumbnail" /> : null}
                                     </div>
                                 </div>
                             </a>
@@ -58,15 +63,11 @@ const LikedPost = () => {
                         <div className={style.noPostsMessage}>아직 좋아요한 게시글이 없습니다.</div>
                     )}
                 </div>
-            </div>
-            <div className={style.pagination}>
-                <span>&lt;</span>
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>5</span>
-                <span>&gt;</span>
+                {totalPosts > 0 && (
+                    <div className={style.pagination}>
+                        <MyPageNation pnTotal={pnTotal} setPage={setPage} page={page} /> {/* MyPageNation에 props 전달 */}
+                    </div>
+                )}
             </div>
         </div>
     );

@@ -4,23 +4,6 @@ import style from "../styles/main.module.css";
 import Header from "../components/Header";
 
 function Main() {
-    const [scrollPosition, setScrollPosition] = useState(0);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrollPosition(window.scrollY);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    const productSectionRef = useRef(null);
-
-    const scrollToProductSection = () => {
-        productSectionRef.current.scrollIntoView({ behavior: "smooth" });
-    };
-
     const [age, setAge] = useState("");
     const [height, setHeight] = useState("");
     const [weight, setWeight] = useState("");
@@ -90,16 +73,16 @@ function Main() {
                     </div>
                 </div>
                 <div id={style.connectText}>
-                    <img src={require("../assets/next.png")} alt="next" onClick={scrollToProductSection} style={{ cursor: "pointer" }} />
+                    <img src={require("../assets/next.png")} alt="next" />
                 </div>
             </section>
             <section id={style.mainSection2}>
                 <div className={style.titleContainer}>
                     <div className={style.angelGuardTitle}>
-                        엔젤가드 <span className={style.bold800}>설치효과</span>
+                        엔젤가드만의 <span className={style.bold800}>특별한 기능</span>
                     </div>
 
-                    <div className={style.angelDescription}>엔젤가드는 다양한 서비스를 제공합니다.</div>
+                    <div className={style.angelDescription}>가족들의 행복한 하루를 위해 다양한 서비스를 제공합니다.</div>
                 </div>
                 <div className={style.photosContainer}>
                     <div className={style.photoBox}>
@@ -136,6 +119,36 @@ function Main() {
                     </div>
                 </div>
             </section>
+            <section className={style.AppSection}>
+                <div className={style.titleContainer}>
+                    <div className={style.angelGuardTitle}>
+                        엔젤가드만의 <span className={style.bold800}>어플리케이션</span>
+                    </div>
+
+                    <div className={style.angelDescription}>장난감 모빌과 어플리케이션을 통하여 아이를 보호합니다.</div>
+                </div>
+                <div className={style.AppContainer}>
+                    <div>
+                        <img className={style.AppImg} src={require("../assets/home.png")} alt="홈화면사진" />
+                    </div>
+                    <div className={style.AppDep}>
+                        <div>
+                            엔젤가드는 장난감 모빌을 통해,
+                            <br />
+                            아이의 건강 상태를 체크하고 아이를 보호합니다.
+                        </div>
+                        <div>
+                            장난감 모빌의 온습도 센서를 통해
+                            <br />
+                            아이의 주변 온도를 나타낼 수 있습니다..
+                        </div>
+                        <div>
+                            모빌의 카메라 덕분에,
+                            <br />먼 곳에 떨어져있어요 아이를 확인할 수 있습니다.
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id={style.mainSection3}>
                 <div className={style.leftContainer}>
                     <div className={style.main3Title}>엔젤가드를 이용하는 우리들의</div>
@@ -150,28 +163,34 @@ function Main() {
                     <img src={require("../assets/Review1.png")} />
                     <img src={require("../assets/Review2.png")} />
                     <img src={require("../assets/Review3.png")} />
-                    <img src={require("../assets/Review4.png")} />
-                    <img src={require("../assets/Review5.png")} />
                     <img src={require("../assets/Review6.png")} />
+                    <img src={require("../assets/Review4.png")} />
+                    <img src={require("../assets/Review5.png")} /> <img src={require("../assets/Review7.png")} />
                     <img src={require("../assets/Review1.png")} />
                     <img src={require("../assets/Review2.png")} />
                     <img src={require("../assets/Review3.png")} />
-                    <img src={require("../assets/Review4.png")} />
-                    <img src={require("../assets/Review5.png")} />
                     <img src={require("../assets/Review6.png")} />
+                    <img src={require("../assets/Review4.png")} />
+                    <img src={require("../assets/Review5.png")} /> <img src={require("../assets/Review7.png")} />
                     <img src={require("../assets/Review1.png")} />
                     <img src={require("../assets/Review2.png")} />
                     <img src={require("../assets/Review3.png")} />
-                    <img src={require("../assets/Review4.png")} />
-                    <img src={require("../assets/Review5.png")} />
                     <img src={require("../assets/Review6.png")} />
+                    <img src={require("../assets/Review4.png")} />
+                    <img src={require("../assets/Review5.png")} /> <img src={require("../assets/Review7.png")} />
+                    <img src={require("../assets/Review1.png")} />
+                    <img src={require("../assets/Review2.png")} />
+                    <img src={require("../assets/Review3.png")} />
+                    <img src={require("../assets/Review6.png")} />
+                    <img src={require("../assets/Review4.png")} />
+                    <img src={require("../assets/Review5.png")} /> <img src={require("../assets/Review7.png")} />
                 </div>
             </section>
 
             <section id={style.bodySection}>
                 <div className={style.bodyAllContnet}>
                     <div className={style.bodyTitle}>
-                        TRY THIS ! <br />
+                        <div className={style.bold800}> TRY THIS !</div>
                         MY BABY BODY ANALYSIS
                     </div>
                     <div className={style.bodyContent}>
@@ -186,12 +205,10 @@ function Main() {
                                     <input className={style.bodyInput} type="text" value={age} onChange={(e) => setAge(e.target.value)} /> 개월
                                 </div>
                                 <div>
-                                    <input className={style.bodyInput} type="text" value={height} onChange={(e) => setHeight(e.target.value)} />
-                                    cm
+                                    <input className={style.bodyInput} type="text" value={height} onChange={(e) => setHeight(e.target.value)} /> cm
                                 </div>
                                 <div>
-                                    <input className={style.bodyInput} type="text" value={weight} onChange={(e) => setWeight(e.target.value)} />
-                                    kg
+                                    <input className={style.bodyInput} type="text" value={weight} onChange={(e) => setWeight(e.target.value)} /> kg
                                 </div>
                             </div>
                             <div className={style.bodyBtn}>
@@ -203,12 +220,28 @@ function Main() {
                         <div className={style.bodyDepContainer}>
                             <div className={style.depContainer}>
                                 • 보건복지부와 대한소아과학회가 공동으로 약 10년마다 제정·발표하는 <br />
-                                「2017 소아청소년 성장도표」기준 아기성장 발달 계산기입니다.
+                                <a
+                                    href="https://knhanes.kdca.go.kr/knhanes/sub08/sub08_02.do"
+                                    className={style.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <strong>「2017 소아청소년 성장도표」</strong>
+                                </a>{" "}
+                                기준 아기성장 발달 계산기입니다.
                             </div>
                             <div className={style.depContainer2}>
                                 • 자녀들의 성장 정도를 같은 또래의 다른 아이들과 비교해 볼 수 있고, <br />
                                 저신장, 저체중, 비만 등 소아청소년의 성장상태를 확인하실 수 있습니다. <br />
-                                <div>질병관리청 2017 소아청소년성장도표를 기준으로 계산됩니다.</div>
+                                <a
+                                    href="https://knhanes.kdca.go.kr/knhanes/sub08/sub08_02.do"
+                                    className={style.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <strong>질병관리청 2017 소아청소년성장도표</strong>
+                                </a>
+                                를 기준으로 계산됩니다.
                             </div>
                         </div>
                     </div>

@@ -15,7 +15,6 @@ body {
     font-family: "SUITE-Regular";
 }
 
-/* 레이아웃 스타일 설정 */
 #container {
     display: flex;
     justify-content: center;
@@ -47,7 +46,6 @@ body {
 .plusBaby {
     width: 703px;
     text-align: center;
-    margin-top: 60px;
     margin-bottom: 40px;
     font-size: 20px;
     font-weight: 300;
@@ -66,12 +64,7 @@ body {
 }
 
 .babyList {
-    width: 703px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    text-align: center;
+    height: 400px;
 }
 
 .babyName {

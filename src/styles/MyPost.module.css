@@ -20,11 +20,10 @@
 }
 
 .writeBtn {
-    margin-bottom: 10px;
     padding: 2px;
-    width: 94px;
+    width: 90px;
     height: 27px;
-    margin-left: 610px;
+    margin-left: 620px;
     text-align: center;
     font-weight: 700;
     font-size: 14px;
@@ -37,7 +36,7 @@
     text-decoration: none;
 }
 .community {
-    height: 450px;
+    height: 430px;
     width: 706px;
     margin: auto;
 }
@@ -54,14 +53,14 @@
 
 .left_top {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .profile {
     width: 40px;
     height: 40px;
     border-radius: 30px;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .username {
@@ -98,7 +97,8 @@
 .thumbnail {
     width: 70px;
     height: 70px;
-    margin: 16px 11px 16px 23px;
+    margin-top: 5px;
+    margin-left: 10px;
 }
 .noPostsMessage {
     font-size: 16px;
@@ -106,8 +106,5 @@
 }
 .pagination {
     text-align: center;
-}
-
-.pagination span {
-    margin-right: 23px;
+    margin-top: 15px;
 }
