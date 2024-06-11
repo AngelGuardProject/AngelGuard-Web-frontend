@@ -66,12 +66,12 @@ function BabyInfo() {
                         const updatedBabies = babies.map((baby) => (baby.baby_id === updatedBaby.baby_id ? updatedBaby : baby));
                         setBabies(updatedBabies);
                         setSelectedBaby(updatedBaby);
-                        setShowBabyPlus(false); // BabyEdit에서 수정 완료 후 BabyInfo로 돌아가기
+                        setShowBabyPlus(false);
                     }}
                     onDelete={() => {
                         fetchBabies();
                         setSelectedBaby(null);
-                        setShowBabyPlus(false); // BabyEdit에서 삭제 완료 후 BabyInfo로 돌아가기
+                        setShowBabyPlus(false);
                     }}
                 />
             )}

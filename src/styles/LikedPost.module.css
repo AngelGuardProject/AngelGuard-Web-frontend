@@ -10,7 +10,8 @@
 }
 
 .totalLikedPosts {
-    margin-top: 40px;
+    height: 20px;
+    margin-top: 50px;
     font-size: 15px;
     font-weight: 500;
     display: flex;
@@ -24,10 +25,10 @@
     text-decoration: none;
 }
 .community {
+    height: 450px;
     width: 706px;
     margin: auto;
 }
-
 .listContents {
     width: 100%;
     height: 80px;
@@ -46,6 +47,7 @@
 .profile {
     width: 40px;
     height: 40px;
+    border-radius: 30px;
     margin-right: 20px;
 }
 
@@ -68,6 +70,7 @@
     font-size: 18px;
     font-weight: 500;
     color: black;
+    margin-bottom: 10px;
 }
 
 .right {
@@ -77,7 +80,7 @@
 .like_count {
     color: black;
     font-size: 11px;
-    margin-top: 75px;
+    margin-top: 60px;
 }
 
 .thumbnail {
@@ -85,7 +88,10 @@
     height: 70px;
     margin: 16px 11px 16px 23px;
 }
-
+.noPostsMessage {
+    font-size: 16px;
+    color: #666662;
+}
 .pagination {
     text-align: center;
     margin-top: 30px;
