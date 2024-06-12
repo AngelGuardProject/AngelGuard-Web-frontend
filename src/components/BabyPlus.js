@@ -65,7 +65,7 @@ function BabyPlus({ onCancel, onAdd }) {
                         <input
                             className={style.babyBirthYear}
                             type="text"
-                            placeholder=""
+                            placeholder="YYYY"
                             value={birthYear}
                             onChange={(e) => setBirthYear(e.target.value)}
                         />
@@ -73,7 +73,7 @@ function BabyPlus({ onCancel, onAdd }) {
                         <input
                             className={style.babyBirthMonth}
                             type="text"
-                            placeholder=""
+                            placeholder="MM"
                             value={birthMonth}
                             onChange={(e) => setBirthMonth(e.target.value)}
                         />
@@ -81,7 +81,7 @@ function BabyPlus({ onCancel, onAdd }) {
                         <input
                             className={style.babyBirthMonth}
                             type="text"
-                            placeholder=""
+                            placeholder="DD"
                             value={birthDay}
                             onChange={(e) => setBirthDay(e.target.value)}
                         />

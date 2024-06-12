@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import style from "../styles/Header.module.css";
 import Login from "./modal/Login-modal";
 import SignUp from "./modal/SignUp-modal";
@@ -7,25 +7,25 @@ import axios from "axios";
 function Header({color, scrolled}) {
   const [modal, setModal] = useState();
 
-  const openLogin = () => {
-    setModal("login");
-  };
+    const openLogin = () => {
+        setModal("login");
+    };
 
-  const openSignUp = () => {
-    setModal("signup");
-  };
+    const openSignUp = () => {
+        setModal("signup");
+    };
 
-  const closeModal = () => {
-    setModal(null);
-  };
+    const closeModal = () => {
+        setModal(null);
+    };
 
-  const headerStyle = {
-    backgroundColor: scrolled ? "rgba(255, 244, 214, 0.4)" : color,
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 999,
-  };
+    const headerStyle = {
+        backgroundColor: scrolled ? "rgba(255, 244, 214, 0.4)" : color,
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 999,
+    };
 
   const logout = () => {
     axios

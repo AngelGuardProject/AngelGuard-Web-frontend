@@ -19,21 +19,18 @@ function BabyInfo() {
             .get(`http://louk342.iptime.org:3000/mypage/baby/${user_login_id}`)
             .then((res) => {
                 console.log(res.data.babies);
-                const formattedBabies = res.data.babies.map((baby) => {
-                    return {
-                        ...baby,
-                        baby_birth: new Date(baby.baby_birth).toLocaleDateString("ko-KR", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                        }),
-                    };
-                });
-                setBabies(formattedBabies);
+                setBabies(res.data.babies);
             })
             .catch((error) => {
                 console.error("Error fetching babies:", error);
             });
+    };
+
+    const calculateAge = (birthdate) => {
+        const today = new Date();
+        const birthDate = new Date(birthdate);
+        const age = today.getFullYear() - birthDate.getFullYear();
+        return age;
     };
 
     const handleBabyClick = (baby) => {
@@ -55,28 +52,19 @@ function BabyInfo() {
         setShowBabyPlus(false);
     };
 
+    const handleUpdate = (updatedData) => {
+        const updatedBabies = babies.map((b) => (b.baby_id === updatedData.baby_id ? updatedData : b));
+        setBabies(updatedBabies);
+        setSelectedBaby(updatedData);
+    };
+
     return (
         <div>
             {showBabyPlus && <BabyPlus onCancel={handleCancel} onAdd={handleAddBaby} />}
-            {selectedBaby && (
-                <BabyEdit
-                    baby={selectedBaby}
-                    onCancel={() => setSelectedBaby(null)}
-                    onUpdate={(updatedBaby) => {
-                        const updatedBabies = babies.map((baby) => (baby.baby_id === updatedBaby.baby_id ? updatedBaby : baby));
-                        setBabies(updatedBabies);
-                        setSelectedBaby(updatedBaby);
-                        setShowBabyPlus(false);
-                    }}
-                    onDelete={() => {
-                        fetchBabies();
-                        setSelectedBaby(null);
-                        setShowBabyPlus(false);
-                    }}
-                />
-            )}
+            {selectedBaby && <BabyEdit baby={selectedBaby} onCancel={() => setSelectedBaby(null)} onUpdate={handleUpdate} />}
+
             {!showBabyPlus && !selectedBaby && (
-                <div>
+                <div className={style.BabyContainer}>
                     <div className={style.contentTitle}>아기 정보</div>
                     <div className={style.plusBaby} onClick={handleAddBabyClick}>
                         + 아기 등록하기
@@ -86,7 +74,7 @@ function BabyInfo() {
                             <div key={baby.baby_id} className={style.babyInfo} onClick={() => handleBabyClick(baby)}>
                                 <div className={style.babyName}>{baby.baby_name}</div>
                                 <div className={style.babyBirth}>
-                                    {baby.baby_sex === "female" ? "여아" : "남아"} / {baby.baby_birth}
+                                    {baby.baby_sex === "female" ? "여아" : "남아"} / {calculateAge(baby.baby_birth)}세
                                 </div>
                             </div>
                         ))}
