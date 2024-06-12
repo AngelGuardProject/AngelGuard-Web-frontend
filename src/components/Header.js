@@ -6,7 +6,6 @@ import axios from "axios";
 
 function Header({color, scrolled}) {
   const [modal, setModal] = useState();
-  const [token, setToken] = useState();
 
   const openLogin = () => {
     setModal("login");
@@ -37,13 +36,16 @@ function Header({color, scrolled}) {
       })
       .then(res => {
         console.log(res);
+        localStorage.removeItem("user_login_id");
+        localStorage.removeItem("token");
+        window.location.href = "/";
       })
       .catch(err => {
         console.log(err);
       });
   };
 
-  useEffect(() => {}, [token]);
+  useEffect(() => {}, []);
 
   return (
     <div style={headerStyle}>
@@ -78,9 +80,7 @@ function Header({color, scrolled}) {
                 <>
                   <li
                     onClick={() => {
-                      localStorage.removeItem("user_login_id");
-                      localStorage.removeItem("token");
-                      setToken(null);
+                      console.log(localStorage.getItem("token"));
                       logout();
                     }}
                     className={style.menuItem}

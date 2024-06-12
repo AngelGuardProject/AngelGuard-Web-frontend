@@ -31,7 +31,6 @@ function SignUp({closeModal}) {
         },
       })
         .then(res => {
-          if (res.data) console.log(res.data);
           alert("회원가입에 성공하였습니다");
           closeModal();
         })
