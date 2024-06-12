@@ -42,17 +42,25 @@ body {
     font-weight: 700;
     color: #000000;
 }
-
 .plusBaby {
-    width: 703px;
+    margin-top: 30px;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     font-size: 20px;
     font-weight: 300;
     color: #666662;
-    cursor: pointer;
 }
 
+.babyList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+.BabyContainer {
+    width: 782px;
+    height: 450px;
+}
 .babyInfo {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     text-align: left;
@@ -62,11 +70,6 @@ body {
     border-radius: 20px;
     margin-bottom: 20px;
 }
-
-.babyList {
-    height: 400px;
-}
-
 .babyName {
     margin-left: 30px;
     margin-top: 15px;

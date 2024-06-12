@@ -63,12 +63,12 @@ const LikedPost = () => {
                         <div className={style.noPostsMessage}>아직 좋아요한 게시글이 없습니다.</div>
                     )}
                 </div>
-                {totalPosts > 0 && (
-                    <div className={style.pagination}>
-                        <MyPageNation pnTotal={pnTotal} setPage={setPage} page={page} /> {/* MyPageNation에 props 전달 */}
-                    </div>
-                )}
             </div>
+            {totalPosts > 0 && (
+                <div className={style.pagination}>
+                    <MyPageNation pnTotal={pnTotal} setPage={setPage} page={page} />
+                </div>
+            )}
         </div>
     );
 };

@@ -10,6 +10,9 @@ body {
     padding: 0;
     font-family: "SUITE-Regular";
 }
+section {
+    transition: transform 0.5s ease;
+}
 
 #mainSection {
     height: 800px;
@@ -65,7 +68,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 800px;
+    height: 860px;
 }
 
 .textContainer {
@@ -73,7 +76,7 @@ body {
 }
 
 .angelGuardTitle {
-    margin-top: 50px;
+    margin-top: 30px;
     margin-right: 950px;
     font-weight: 300;
     font-size: 40px;
@@ -83,7 +86,7 @@ body {
     font-weight: 800;
 }
 .angelDescription {
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     color: #666662;
     font-weight: 300;
     font-size: 23px;
@@ -122,7 +125,7 @@ body {
 }
 /*AppSection*/
 .AppSection {
-    height: 860px;
+    height: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,31 +148,32 @@ body {
 }
 .AppDep div {
     margin-bottom: 70px;
+    opacity: 0;
+    animation: slideIn 0.6s forwards;
 }
 
 @keyframes slideIn {
-    0% {
+    from {
         opacity: 0;
         transform: translateY(-20px);
     }
-    100% {
+    to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.AppDep > div:nth-child(1) {
-    animation: slideIn 0.5s ease-in-out 0s forwards;
+.AppDep div:nth-child(1) {
+    animation-delay: 0.3s;
 }
 
-.AppDep > div:nth-child(2) {
-    animation: slideIn 0.5s ease-in-out 0.2s forwards;
+.AppDep div:nth-child(2) {
+    animation-delay: 0.6s;
 }
 
-.AppDep > div:nth-child(3) {
-    animation: slideIn 0.5s ease-in-out 0.4s forwards;
+.AppDep div:nth-child(3) {
+    animation-delay: 0.9s;
 }
-
 /*메인섹션3 */
 @keyframes slideAnimation {
     0% {
@@ -242,7 +246,7 @@ body {
 
 /* bodySection */
 #bodySection {
-    height: 500px;
+    height: 550px;
     justify-content: center;
 }
 .bodyAllContnet {
@@ -261,6 +265,7 @@ body {
     text-align: center;
     font-size: 40px;
     font-weight: 300;
+    margin-bottom: 85px;
 }
 .bodyImg img {
     margin-right: 50px;
@@ -292,7 +297,7 @@ body {
 
 .bodyInput[type="text"] {
     height: 30px;
-    width: 45px;
+    width: 40px;
     border: none;
     border-bottom: 2px solid #d9d9d9;
     outline: none;
