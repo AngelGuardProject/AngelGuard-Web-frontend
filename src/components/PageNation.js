@@ -16,11 +16,17 @@ function PageNation({pnTotal, setPage, page}) {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          width: `${pnTotal * 100}px`,
+          margin: "auto",
         }}
       >
         <img
           onClick={() => {
-            setPage(page - 1);
+            if (page > 1) {
+              setPage(page - 1);
+            } else {
+              return 0;
+            }
           }}
           src={require("../assets/leftArrow.png")}
         />
@@ -41,7 +47,11 @@ function PageNation({pnTotal, setPage, page}) {
         ))}
         <img
           onClick={() => {
-            setPage(page + 1);
+            if (page < pnTotal) {
+              setPage(page + 1);
+            } else {
+              return 0;
+            }
           }}
           src={require("../assets/rightArrow.png")}
         />
