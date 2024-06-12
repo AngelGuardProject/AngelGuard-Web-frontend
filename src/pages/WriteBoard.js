@@ -21,8 +21,8 @@ function WriteBoard() {
     if (fileInputRef.current.files[0]) {
       formData.append("board_thumbnail", fileInputRef.current.files[0]);
     } else {
-      // 섬네일을 추가하지 않은 경우에는 null 문자열 전송
-      formData.append("board_thumbnail", "null");
+      // 섬네일을 추가하지 않은 경우에는 null 전송
+      formData.append("board_thumbnail", null);
     }
 
     formData.append("user_login_id", localStorage.getItem("user_login_id"));
@@ -43,7 +43,9 @@ function WriteBoard() {
         }
       })
       .catch(err => {
-        console.log(err);
+        if (err.response.status == 400) {
+          alert("제목 또는 내용을 작성해주세요.");
+        }
       });
   };
 
