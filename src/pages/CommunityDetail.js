@@ -1,4 +1,4 @@
-import {Link, useNavigate, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import Header from "../components/Header";
 import style from "../styles/CommunityDetail.module.css";
 import Footer from "../components/Footer";
@@ -10,6 +10,7 @@ function CommunityDetail() {
   const [data, setData] = useState("");
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState();
+  const [likeState, setLikeState] = useState(false);
 
   useEffect(() => {
     axios
@@ -32,13 +33,37 @@ function CommunityDetail() {
         },
       })
       .then(res => {
-        console.log(res.data.comments);
         setComments(res.data.comments);
       })
       .catch(err => {
         console.log(err);
       });
+
+    axios
+      .post(`http://louk342.iptime.org:3000/like/${params.id}`, {
+        user_login_id: localStorage.getItem("user_login_id"),
+      })
+      .then(res => {
+        console.log(res);
+        setLikeState(res.data.liked);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }, []);
+
+  const handleHeart = () => {
+    axios
+      .post(`http://louk342.iptime.org:3000/like/toggle/${params.id}`, {
+        user_login_id: localStorage.getItem("user_login_id"),
+      })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   const addComment = () => {
     axios
@@ -96,6 +121,31 @@ function CommunityDetail() {
               className={style.content}
               dangerouslySetInnerHTML={{__html: data.board_content}}
             ></div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "end",
+                marginRight: "19px",
+                marginTop: "40px",
+                paddingBottom: "13px",
+              }}
+            >
+              <img
+                onClick={() => {
+                  if (localStorage.getItem("user_login_id") == null) {
+                    alert("로그인이 필요한 컨텐츠입니다");
+                  } else {
+                    handleHeart();
+                  }
+                }}
+                className={style.heart}
+                src={
+                  likeState
+                    ? require("../assets/redHeart.png")
+                    : require("../assets/emptyHeart.png")
+                }
+              />
+            </div>
           </div>
           <div className={style.commentBox}>
             <div>
