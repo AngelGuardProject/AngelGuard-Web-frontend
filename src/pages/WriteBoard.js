@@ -8,7 +8,7 @@ import defaultThumbnailImage from "../assets/thumbnail.png";
 
 function WriteBoard() {
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState();
+  const [content, setContent] = useState("");
   const [thumbnailImage, setThumbnailImage] = useState(defaultThumbnailImage);
 
   const fileInputRef = useRef(null);
@@ -43,6 +43,7 @@ function WriteBoard() {
         }
       })
       .catch(err => {
+        console.log(err);
         if (err.response.status == 400) {
           alert("제목 또는 내용을 작성해주세요.");
         }
