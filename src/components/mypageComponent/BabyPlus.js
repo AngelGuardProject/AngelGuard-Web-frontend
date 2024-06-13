@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import style from "../styles/BabyPlus.module.css";
+import style from "../../styles/BabyPlus.module.css";
 import axios from "axios";
 
 function BabyPlus({ onCancel, onAdd }) {
@@ -12,6 +12,27 @@ function BabyPlus({ onCancel, onAdd }) {
     const [weight, setWeight] = useState("");
 
     const handleAddBaby = () => {
+        if (!name) {
+            alert("이름을 입력해주세요!");
+            return;
+        }
+        if (!birthYear || !birthMonth || !birthDay) {
+            alert("생년월일을 모두 입력해주세요!");
+            return;
+        }
+        if (!gender) {
+            alert("성별을 선택해주세요!");
+            return;
+        }
+        if (!height) {
+            alert("키를 입력해주세요!");
+            return;
+        }
+        if (!weight) {
+            alert("몸무게를 입력해주세요!");
+            return;
+        }
+
         const user_login_id = localStorage.getItem("user_login_id");
         const babyData = {
             user_login_id,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import style from "../styles/Sidebar.module.css";
+import style from "../../styles/Sidebar.module.css";
 
 function Sidebar({ onMenuItemClick }) {
     const [clickedItem, setClickedItem] = useState("내 정보 수정");

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import style from "../styles/MyPost.module.css";
+import style from "../../styles/MyPost.module.css";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import MyPageNation from "./MyPageNation";
@@ -54,7 +54,9 @@ const MyPost = () => {
                                             <img
                                                 className={style.profile}
                                                 src={
-                                                    post.user_image && post.user_image !== "null" ? post.user_image : require("../assets/mypage.png")
+                                                    post.user_image && post.user_image !== "null"
+                                                        ? post.user_image
+                                                        : require("../../assets/mypage.png")
                                                 }
                                                 alt="profile"
                                             />

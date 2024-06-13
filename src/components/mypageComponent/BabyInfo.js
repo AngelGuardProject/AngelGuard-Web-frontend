@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import BabyPlus from "./BabyPlus";
 import BabyEdit from "./BabyEdit";
-import style from "../styles/BabyInfo.module.css";
+import style from "../../styles/BabyInfo.module.css";
 import axios from "axios";
 
 function BabyInfo() {

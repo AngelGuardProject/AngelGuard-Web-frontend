@@ -24,7 +24,7 @@ function MyPageNation({ pnTotal, setPage, page }) {
                             setPage(page - 1);
                         }
                     }}
-                    src={require("../assets/leftArrow.png")}
+                    src={require("../../assets/leftArrow.png")}
                     style={{ width: "16px", height: "16px", cursor: "pointer" }}
                 />
                 {pages.map((item) => (
@@ -50,7 +50,7 @@ function MyPageNation({ pnTotal, setPage, page }) {
                             setPage(page + 1);
                         }
                     }}
-                    src={require("../assets/rightArrow.png")}
+                    src={require("../../assets/rightArrow.png")}
                     style={{ width: "16px", height: "16px", cursor: "pointer" }}
                 />
             </div>
