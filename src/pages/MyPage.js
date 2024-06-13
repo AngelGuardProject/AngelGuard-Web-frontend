@@ -14,14 +14,10 @@ const MyPage = () => {
     const handleMenuItemClick = (item) => {
         setActiveMenuItem(item);
     };
-    const handleLogOut = () => {
-        alert("로그인 후 이용할 수 있는 컨텐츠입니다.");
-        window.location.href = "/";
-    };
 
     return (
         <div>
-            <Header onLogout={handleLogOut} />
+            <Header />
             <div id={style.mypageContainer}>
                 <div id={style.mypageTitle}>MY PAGE</div>
                 <div id={style.container}>
