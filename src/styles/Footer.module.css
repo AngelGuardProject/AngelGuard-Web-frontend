@@ -1,146 +1,157 @@
 @font-face {
-    font-family: "SUITE-Regular";
-    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
+  font-family: "SUITE-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
 }
 
 html {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    font-family: "SUITE-Regular";
+  font-family: "SUITE-Regular";
 }
 
 .footer {
-    height: 281px;
-    background: #666662;
-    box-sizing: border-box;
+  height: 281px;
+  background: #666662;
+  box-sizing: border-box;
+  margin: auto;
 }
 
 .footerMenu {
-    height: 56px;
-    background: #666662;
-    border-bottom: 1px solid #fff4d6;
-    display: flex;
-    align-items: center;
+  height: 56px;
+  background: #666662;
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .menuItem {
-    margin: 0 10px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    color: #fff4d6;
+  margin: 0 10px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff4d6;
 }
 
 .menuSeparator {
-    color: #fff4d6;
-    margin: 0 10px;
+  color: #fff4d6;
+  margin: 0 10px;
+}
+
+.line {
+  margin: 0;
+  border: 1px solid #fff4d6;
 }
 
 .footerContent {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .companyInfo {
-    margin-top: 48px;
-    color: #b7b09e;
+  margin-top: 48px;
+  color: #b7b09e;
+  margin-left: 10px;
 }
 
 .companyName {
-    text-align: left;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    color: #fff4d6;
-    margin-bottom: 10px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff4d6;
+  margin-bottom: 10px;
 }
 
 .detail {
-    text-align: left;
-    margin-top: 10px;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 16px;
+  text-align: left;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
 }
 
 .separator {
-    margin: 0 20px;
+  margin: 0 20px;
 }
 
 .snsIcons {
-    text-align: left;
-    margin-top: 35px;
+  text-align: left;
+  margin-top: 35px;
 }
 
 .icon {
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    margin-right: 38px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin-right: 38px;
 }
 
 .customerService {
-    margin-right: 5px; /*1:1문의하기 버튼 박스 오른쪽 선이 애매하게 안 보여서 */
-    margin-top: 48px;
-    color: #fff4d6;
+  margin-right: 10px;
+  margin-top: 48px;
+  color: #fff4d6;
 }
 
 .customerTitle {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .title {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    margin-right: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  margin-right: 10px;
 }
 
 .inquiryButton {
-    width: 80px;
-    height: 24px;
-    border: 1px solid #fff4d6;
-    background: transparent;
-    color: #fff4d6;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+  width: 80px;
+  height: 24px;
+  border: 1px solid #fff4d6;
+  background: transparent;
+  color: #fff4d6;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .hours {
-    text-align: left;
-    margin-bottom: 3px;
-    margin-top: 16px;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
+  text-align: left;
+  margin-bottom: 3px;
+  margin-top: 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
 }
 
 .check {
-    display: flex;
-    align-items: center;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
-    color: #b7b09e;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #b7b09e;
 }
 
 .checkbox {
-    width: 13px;
-    height: 13px;
-    margin-left: 5px;
-    background: #d9d9d9;
-    border: 1px solid #b7b09e;
+  width: 13px;
+  height: 13px;
+  margin-left: 5px;
+  background: #d9d9d9;
+  border: 1px solid #b7b09e;
 }
