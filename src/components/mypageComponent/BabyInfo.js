@@ -53,9 +53,9 @@ function BabyInfo() {
     };
 
     const handleUpdate = (updatedData) => {
-        const updatedBabies = babies.map((b) => (b.baby_id === updatedData.baby_id ? updatedData : b));
+        const updatedBabies = babies.filter((b) => b.baby_id !== updatedData.baby_id); // 삭제된 아기 정보를 제외하고 필터링
         setBabies(updatedBabies);
-        setSelectedBaby(updatedData);
+        setSelectedBaby(null); // 선택된 아기 정보 초기화
     };
 
     return (
@@ -72,6 +72,13 @@ function BabyInfo() {
                     <div className={style.babyList}>
                         {babies.map((baby) => (
                             <div key={baby.baby_id} className={style.babyInfo} onClick={() => handleBabyClick(baby)}>
+                                <div className={style.babyImgBox}>
+                                    <img
+                                        className={`${style.babyImg} ${baby.baby_sex !== "female" ? style.boy : ""}`}
+                                        src={require(`../../assets/${baby.baby_sex === "female" ? "girl" : "boy"}.png`)}
+                                        alt="Baby"
+                                    />
+                                </div>
                                 <div className={style.babyName}>{baby.baby_name}</div>
                                 <div className={style.babyBirth}>
                                     {baby.baby_sex === "female" ? "여아" : "남아"} / {calculateAge(baby.baby_birth)}세
