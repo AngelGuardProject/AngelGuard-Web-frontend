@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import style from "../styles/main.module.css";
-import homeImage from "../assets/home.png";
+import style from "../../styles/main.module.css";
+import homeImage from "../../assets/home.png";
 const MainSection2 = () => {
     return (
         <section id={style.mainSection2}>
@@ -13,7 +13,7 @@ const MainSection2 = () => {
             </div>
             <div className={style.photosContainer}>
                 <div className={style.photoBox}>
-                    <img src={require("../assets/mobile.png")} alt="사진1" />
+                    <img src={require("../../assets/mobile.png")} alt="사진1" />
                     <div className={style.photoTitle}>실시간 모니터링</div>
                     <div className={style.photoDescription}>
                         실시간 우리 아기를 볼 수 있어
@@ -22,7 +22,7 @@ const MainSection2 = () => {
                     </div>
                 </div>
                 <div className={style.photoBox}>
-                    <img src={require("../assets/small-mobile.png")} alt="사진2" />
+                    <img src={require("../../assets/small-mobile.png")} alt="사진2" />
                     <div className={style.photoTitle}>모빌 컨트롤 가능 </div>
                     <div className={style.photoDescription}>
                         엔젤가드로 먼 곳에서도 <br />
@@ -30,7 +30,7 @@ const MainSection2 = () => {
                     </div>
                 </div>
                 <div className={style.photoBox}>
-                    <img src={require("../assets/baby.png")} alt="사진3" />
+                    <img src={require("../../assets/baby.png")} alt="사진3" />
                     <div className={style.photoTitle}>아기 울음 분석</div>
                     <div className={style.photoDescription}>
                         아기가 울면 엔젤가드에서 <br />
@@ -38,7 +38,7 @@ const MainSection2 = () => {
                     </div>
                 </div>
                 <div className={style.photoBox}>
-                    <img src={require("../assets/temp.png")} alt="사진4" />
+                    <img src={require("../../assets/temp.png")} alt="사진4" />
                     <div className={style.photoTitle}>아기 주변 온도 감지</div>
                     <div className={style.photoDescription}>
                         아기 주변 온도를 감지하여 <br />앱 홈화면에 표시하여 건강상태 관리
@@ -107,30 +107,38 @@ const MainSection3 = () => {
                 </div>
             </div>
             <div className={`${style.rightContainer} slider`}>
-                <img src={require("../assets/Review1.png")} />
-                <img src={require("../assets/Review2.png")} />
-                <img src={require("../assets/Review3.png")} />
-                <img src={require("../assets/Review6.png")} />
-                <img src={require("../assets/Review4.png")} />
-                <img src={require("../assets/Review5.png")} /> <img src={require("../assets/Review7.png")} />
-                <img src={require("../assets/Review1.png")} />
-                <img src={require("../assets/Review2.png")} />
-                <img src={require("../assets/Review3.png")} />
-                <img src={require("../assets/Review6.png")} />
-                <img src={require("../assets/Review4.png")} />
-                <img src={require("../assets/Review5.png")} /> <img src={require("../assets/Review7.png")} />
-                <img src={require("../assets/Review1.png")} />
-                <img src={require("../assets/Review2.png")} />
-                <img src={require("../assets/Review3.png")} />
-                <img src={require("../assets/Review6.png")} />
-                <img src={require("../assets/Review4.png")} />
-                <img src={require("../assets/Review5.png")} /> <img src={require("../assets/Review7.png")} />
-                <img src={require("../assets/Review1.png")} />
-                <img src={require("../assets/Review2.png")} />
-                <img src={require("../assets/Review3.png")} />
-                <img src={require("../assets/Review6.png")} />
-                <img src={require("../assets/Review4.png")} />
-                <img src={require("../assets/Review5.png")} /> <img src={require("../assets/Review7.png")} />
+                <img src={require("../../assets/Review1.png")} />
+                <img src={require("../../assets/Review2.png")} />
+                <img src={require("../../assets/Review3.png")} />
+                <img src={require("../../assets/Review2.png")} />
+                <img src={require("../../assets/Review6.png")} />
+                <img src={require("../../assets/Review4.png")} />
+                <img src={require("../../assets/Review5.png")} />
+                <img src={require("../../assets/Review7.png")} />
+                <img src={require("../../assets/Review1.png")} />
+                <img src={require("../../assets/Review2.png")} />
+                <img src={require("../../assets/Review3.png")} />
+                <img src={require("../../assets/Review2.png")} />
+                <img src={require("../../assets/Review6.png")} />
+                <img src={require("../../assets/Review4.png")} />
+                <img src={require("../../assets/Review5.png")} />
+                <img src={require("../../assets/Review7.png")} />
+                <img src={require("../../assets/Review1.png")} />
+                <img src={require("../../assets/Review2.png")} />
+                <img src={require("../../assets/Review3.png")} />
+                <img src={require("../../assets/Review2.png")} />
+                <img src={require("../../assets/Review6.png")} />
+                <img src={require("../../assets/Review4.png")} />
+                <img src={require("../../assets/Review5.png")} />
+                <img src={require("../../assets/Review7.png")} />
+                <img src={require("../../assets/Review1.png")} />
+                <img src={require("../../assets/Review2.png")} />
+                <img src={require("../../assets/Review3.png")} />
+                <img src={require("../../assets/Review2.png")} />
+                <img src={require("../../assets/Review6.png")} />
+                <img src={require("../../assets/Review4.png")} />
+                <img src={require("../../assets/Review5.png")} />
+                <img src={require("../../assets/Review7.png")} />
             </div>
         </section>
     );
@@ -200,9 +208,9 @@ const BodySection = () => {
                 <div className={style.bodyContent}>
                     <div className={style.bodyInputContainer}>
                         <div className={style.bodyImg}>
-                            <img src={require("../assets/age.png")} alt="" />
-                            <img src={require("../assets/height.png")} alt="" />
-                            <img src={require("../assets/kg.png")} alt="" />
+                            <img src={require("../../assets/age.png")} alt="" />
+                            <img src={require("../../assets/height.png")} alt="" />
+                            <img src={require("../../assets/kg.png")} alt="" />
                         </div>
                         <div id={style.bodyInputContainer}>
                             <div className={style.bodyInputBox}>

@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
 import style from "../styles/main.module.css";
 import Header from "../components/Header";
-import { MainSection2, AppSection, MainSection3, BodySection } from "../components/AppSection";
-//스크롤 시 섹션마다 이동하게하고 부드럽게 하게 하려고 컴포넌트 분리헸는데 이상해서 버림
+import { MainSection2, AppSection, MainSection3, BodySection } from "../components/mainAppSection/AppSection.js";
+
 function Main() {
     return (
         <div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import style from "../styles/MyInfo.module.css";
-import defaultProfileImage from "../assets/mypage.png";
-import cameraIcon from "../assets/camera-icon.png";
+import style from "../../styles/MyInfo.module.css";
+import defaultProfileImage from "../../assets/mypage.png";
+import cameraIcon from "../../assets/camera-icon.png";
 import axios from "axios";
 
 function MyInfo() {

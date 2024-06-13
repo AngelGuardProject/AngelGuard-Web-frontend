@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import style from "../styles/LikedPost.module.css";
+import style from "../../styles/LikedPost.module.css";
 import axios from "axios";
 import MyPageNation from "./MyPageNation";
 
@@ -41,7 +41,9 @@ const LikedPost = () => {
                                             <img
                                                 className={style.profile}
                                                 src={
-                                                    post.user_image && post.user_image !== "null" ? post.user_image : require("../assets/mypage.png")
+                                                    post.user_image && post.user_image !== "null"
+                                                        ? post.user_image
+                                                        : require("../../assets/mypage.png")
                                                 }
                                                 alt="profile"
                                             />

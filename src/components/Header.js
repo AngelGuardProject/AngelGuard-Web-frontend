@@ -4,7 +4,7 @@ import Login from "./modal/Login-modal";
 import SignUp from "./modal/SignUp-modal";
 import axios from "axios";
 
-function Header({ color, scrolled }) {
+function Header({ color, scrolled, onLogout }) {
     const [modal, setModal] = useState();
 
     const openLogin = () => {
@@ -78,6 +78,7 @@ function Header({ color, scrolled }) {
                                         onClick={() => {
                                             console.log(localStorage.getItem("token"));
                                             logout();
+                                            onLogout();
                                         }}
                                         className={style.menuItem}
                                     >

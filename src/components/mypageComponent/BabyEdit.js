@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import style from "../styles/BabyEdit.module.css";
+import style from "../../styles/BabyEdit.module.css";
 import axios from "axios";
 
 function BabyEdit({ baby, onCancel, onUpdate }) {
@@ -7,7 +7,6 @@ function BabyEdit({ baby, onCancel, onUpdate }) {
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
     const day = date.getDate();
-
     const [name, setName] = useState(baby.baby_name);
     const [birthYear, setBirthYear] = useState(year.toString());
     const [birthMonth, setBirthMonth] = useState(month.toString());
@@ -34,6 +33,27 @@ function BabyEdit({ baby, onCancel, onUpdate }) {
     };
 
     const handleEditBaby = () => {
+        if (!name) {
+            alert("이름을 입력해주세요!");
+            return;
+        }
+        if (!birthYear || !birthMonth || !birthDay) {
+            alert("생년월일을 모두 입력해주세요!");
+            return;
+        }
+        if (!gender) {
+            alert("성별을 선택해주세요!");
+            return;
+        }
+        if (!height) {
+            alert("키를 입력해주세요!");
+            return;
+        }
+        if (!weight) {
+            alert("몸무게를 입력해주세요!");
+            return;
+        }
+
         const user_login_id = localStorage.getItem("user_login_id");
         const newBirthdate = `${birthYear}-${birthMonth.padStart(2, "0")}-${birthDay.padStart(2, "0")}`;
 
