@@ -143,7 +143,6 @@ const MainSection3 = () => {
         </section>
     );
 };
-
 const BodySection = () => {
     const [age, setAge] = useState("");
     const [height, setHeight] = useState("");
@@ -171,9 +170,11 @@ const BodySection = () => {
             setMessage("");
             setSubmitted(false);
         } else {
+            const ageNumber = parseInt(age);
+
             const ageGroup = Object.keys(growthChart).find((range) => {
                 const [min, max] = range.split("-").map(Number);
-                return age >= min && age <= max;
+                return ageNumber >= min && ageNumber <= max;
             });
 
             if (!ageGroup) {
