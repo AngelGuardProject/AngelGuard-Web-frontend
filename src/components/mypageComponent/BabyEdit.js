@@ -11,24 +11,24 @@ function BabyEdit({ baby, onCancel, onUpdate }) {
     const [birthYear, setBirthYear] = useState(year.toString());
     const [birthMonth, setBirthMonth] = useState(month.toString());
     const [birthDay, setBirthDay] = useState(day.toString());
-
     const [gender, setGender] = useState(baby.baby_sex);
     const [height, setHeight] = useState(baby.baby_height);
     const [weight, setWeight] = useState(baby.baby_weight);
+    const [showDeleteMenu, setShowDeleteMenu] = useState(false);
 
     const handleDeleteBaby = () => {
         const user_login_id = localStorage.getItem("user_login_id");
-
         axios
             .post(`http://louk342.iptime.org:3000/mypage/babydelete/${user_login_id}/${baby.baby_id}`)
             .then((res) => {
                 alert("아기가 성공적으로 삭제되었습니다.");
                 console.log("Baby deleted successfully:", res);
-                onUpdate(null);
+                onUpdate(baby);
                 onCancel();
             })
             .catch((error) => {
                 console.error("Error deleting baby:", error);
+                alert("아기를 삭제하는 데 문제가 생겼습니다.");
             });
     };
 
@@ -71,19 +71,38 @@ function BabyEdit({ baby, onCancel, onUpdate }) {
             .then((res) => {
                 alert("아기 정보가 성공적으로 수정되었습니다.");
                 console.log("Baby updated successfully:", res);
-                onUpdate(updatedData);
                 onCancel();
             })
             .catch((error) => {
                 console.error("Error updating baby:", error);
-                alert("아기 정보를 수정하는 데 문제가 발생했습니다.");
             });
+    };
+
+    const handleMenuClick = () => {
+        setShowDeleteMenu(!showDeleteMenu);
+    };
+
+    const handleDeleteClick = () => {
+        setShowDeleteMenu(false);
+        if (window.confirm("정말로 이 아기를 삭제하시겠습니까?")) {
+            handleDeleteBaby();
+        }
     };
 
     return (
         <div>
             <div className={style.contentTitle}>아기 정보 수정</div>
             <div className={style.babyInfoContainer}>
+                <div className={style.menuIcondiv}>
+                    <img className={style.menuIcon} src={require("../../assets/menu-bar.png")} alt="menu" onClick={handleMenuClick} />
+                    {showDeleteMenu && (
+                        <div className={style.deleteMenu}>
+                            <div className={style.deleteMenuItem} onClick={handleDeleteClick}>
+                                삭제
+                            </div>
+                        </div>
+                    )}
+                </div>
                 <div className={`${style.babyInput} ${style.babyGenderBox}`}>
                     <div className={style.babyTitle}> 이름</div>
                     <div>
@@ -143,8 +162,8 @@ function BabyEdit({ baby, onCancel, onUpdate }) {
                     <button className={style.btn} id={style.edit} onClick={handleEditBaby}>
                         수정
                     </button>
-                    <button className={style.btn} id={style.cancel} onClick={handleDeleteBaby}>
-                        삭제
+                    <button className={style.btn} id={style.cancel} onClick={() => onCancel()}>
+                        취소
                     </button>
                 </div>
             </div>

@@ -88,6 +88,7 @@ input:focus {
 }
 
 .babyBirthYear {
+    color: #a6a6a6;
     text-align: center;
     margin-left: 15px;
     height: 30px;
@@ -96,6 +97,7 @@ input:focus {
 }
 
 .babyBirthMonth {
+    color: #a6a6a6;
     text-align: center;
     height: 30px;
     border-bottom: 1px solid #d9d9d9;
@@ -187,7 +189,7 @@ input:focus {
 
 #cancle {
     background-color: #ffffff;
-    border: 2px solid #a6a6a6;
+    border: 2px solid #d9d9d9;
 }
 #radio[type="radio"]:checked + label::before {
     background-color: black;
