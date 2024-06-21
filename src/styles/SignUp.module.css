@@ -30,7 +30,28 @@
     background-color: #fff4d6;
     border-radius: 20px 0 0 20px;
 }
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
+.leftTxt {
+    text-align: right;
+    animation: slideDown 1s ease-out;
+    font-size: 20px;
+    color: #666662;
+    font-weight: 300;
+    margin-left: 40px;
+    margin-top: 450px;
+    padding-top: 30px;
+    margin-right: 40px;
+}
 .logo {
     font-size: 40px;
     color: #666662;
