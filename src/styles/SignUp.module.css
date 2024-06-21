@@ -92,7 +92,6 @@ input {
     height: 56px;
     border: none;
     border-bottom: 1px solid #d9d9d9;
-
     outline: none;
     font-size: 16px;
     padding: 0;
@@ -111,5 +110,5 @@ input::placeholder {
     border: none;
     border-radius: 10px;
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 700;
 }
