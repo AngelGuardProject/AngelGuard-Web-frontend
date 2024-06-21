@@ -5,6 +5,14 @@ import Header from "../components/Header";
 import { MainSection2, AppSection, MainSection3, BodySection } from "../components/mainAppSection/AppSection.js";
 
 function Main() {
+    const footerRef = useRef(null);
+
+    const scrollToFooter = () => {
+        if (footerRef.current) {
+            footerRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <div>
             <Header color="#fff4d6" scrolled={true} />
@@ -19,7 +27,7 @@ function Main() {
                         <div className={style.mainSub}>우리는 육아의 모든 단계에서 도움을 드리고, 편리함을 제공합니다.</div>
                     </div>
                 </div>
-                <div id={style.connectText}>
+                <div id={style.connectText} onClick={scrollToFooter}>
                     <img src={require("../assets/next.png")} alt="next" />
                 </div>
             </section>
@@ -27,7 +35,9 @@ function Main() {
             <AppSection />
             <MainSection3 />
             <BodySection />
-            <Footer />
+            <div ref={footerRef}>
+                <Footer />
+            </div>
         </div>
     );
 }
