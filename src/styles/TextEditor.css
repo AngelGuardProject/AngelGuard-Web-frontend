@@ -1,12 +1,12 @@
 .ck.ck-editor__editable {
-    min-height: 35rem;
-    max-height: 35rem;
-    max-width: 1055px;
-    padding: 0px;
-    margin: auto;
+  min-height: 35rem !important;
+  max-height: 35rem !important;
+  max-width: 1055px !important;
+  padding: 0px !important;
+  margin: auto !important;
 }
 
 .ck.ck-editor__top {
-    max-width: 1055px;
-    margin: auto;
+  max-width: 1055px !important;
+  margin: auto !important;
 }
