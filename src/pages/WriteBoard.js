@@ -1,4 +1,4 @@
-import {useState, useRef} from "react";
+import { useState, useRef } from "react";
 import axios from "axios";
 import Header from "../components/Header";
 import TextEditor from "../components/ckeditor/TextEditor";
@@ -29,20 +29,19 @@ function WriteBoard() {
     formData.append("board_title", title);
     formData.append("board_content", content);
 
-    // 서버 호스팅 후 주소 변경 -> "http://louk342.iptime.org:3000/board/write"
     axios
-      .post("http://louk342.iptime.org:3000/board/write", formData, {
+      .post("http://34.47.76.73:3000/board/write", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       })
-      .then(res => {
+      .then((res) => {
         console.log(res);
         if (res.data.success) {
           window.location.href = `/com-detail/${res.data.board_id}`;
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         if (err.response.status == 400) {
           alert("제목 또는 내용을 작성해주세요.");
@@ -51,7 +50,7 @@ function WriteBoard() {
   };
 
   // 업로드할 이미지 처리
-  const handleImageUpload = event => {
+  const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
@@ -79,7 +78,7 @@ function WriteBoard() {
       <Header color="white" />
       <div
         className={style.thumbnail}
-        style={{backgroundImage: `url(${thumbnailImage})`}}
+        style={{ backgroundImage: `url(${thumbnailImage})` }}
       >
         <img
           src={cameraIcon}
@@ -93,14 +92,14 @@ function WriteBoard() {
           accept="image/*"
           onChange={handleImageUpload}
           ref={fileInputRef}
-          style={{display: "none"}}
+          style={{ display: "none" }}
         />
         <div className={style.titleWrap}>
           <input
             className={style.titleInput}
             name="board_title"
             value={title}
-            onChange={e => {
+            onChange={(e) => {
               setTitle(e.target.value);
             }}
             placeholder="제목을 입력하세요."

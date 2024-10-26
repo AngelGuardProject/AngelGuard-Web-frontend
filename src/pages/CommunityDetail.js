@@ -1,8 +1,8 @@
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import style from "../styles/CommunityDetail.module.css";
 import Footer from "../components/Footer";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 function CommunityDetail() {
@@ -14,54 +14,54 @@ function CommunityDetail() {
 
   useEffect(() => {
     axios
-      .get(`http://louk342.iptime.org:3000/board/${params.id}`, {
+      .get(`http://34.47.76.73:3000/board/${params.id}`, {
         params: {
           board_id: params.id,
         },
       })
-      .then(res => {
+      .then((res) => {
         setData(res.data);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
 
     axios
-      .get(`http://louk342.iptime.org:3000/comment/${params.id}`, {
+      .get(`http://34.47.76.73:3000/comment/${params.id}`, {
         params: {
           board_id: params.id,
         },
       })
-      .then(res => {
+      .then((res) => {
         setComments(res.data.comments);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
 
     axios
-      .post(`http://louk342.iptime.org:3000/like/${params.id}`, {
+      .post(`http://34.47.76.73:3000/like/${params.id}`, {
         user_login_id: localStorage.getItem("user_login_id"),
       })
-      .then(res => {
+      .then((res) => {
         console.log(res);
         setLikeState(res.data.liked);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }, []);
 
   const handleHeart = () => {
     axios
-      .post(`http://louk342.iptime.org:3000/like/toggle/${params.id}`, {
+      .post(`http://34.47.76.73:3000/like/toggle/${params.id}`, {
         user_login_id: localStorage.getItem("user_login_id"),
       })
-      .then(res => {
+      .then((res) => {
         console.log(res);
         window.location.reload();
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
@@ -69,7 +69,7 @@ function CommunityDetail() {
   const addComment = () => {
     axios
       .post(
-        "http://louk342.iptime.org:3000/comment/write",
+        "http://34.47.76.73:3000/comment/write",
         {
           board_id: params.id,
           user_login_id: localStorage.getItem("user_login_id"),
@@ -81,11 +81,11 @@ function CommunityDetail() {
           },
         }
       )
-      .then(res => {
+      .then((res) => {
         console.log(res);
         window.location.reload();
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         alert("로그인이 필요한 컨텐츠입니다.");
         window.location.reload();
@@ -120,7 +120,7 @@ function CommunityDetail() {
             <div className={style.line}></div>
             <div
               className={style.content}
-              dangerouslySetInnerHTML={{__html: data.board_content}}
+              dangerouslySetInnerHTML={{ __html: data.board_content }}
             ></div>
             <div
               style={{
@@ -153,7 +153,7 @@ function CommunityDetail() {
               <div className={style.commentTitle}>COMMENT</div>
               <textarea
                 name="comment"
-                onChange={e => {
+                onChange={(e) => {
                   setComment(e.target.value);
                 }}
                 className={style.input}
@@ -166,7 +166,7 @@ function CommunityDetail() {
           </div>
           <div className={style.comments}>
             {comments &&
-              comments.map(item => (
+              comments.map((item) => (
                 <div className={style.comment}>
                   <div className={style.commentInfo}>
                     {item.user_image == null ? (

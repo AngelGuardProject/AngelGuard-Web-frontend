@@ -1,8 +1,8 @@
-import {Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import style from "../styles/Community.module.css";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import PageNation from "../components/PageNation";
 
@@ -15,13 +15,13 @@ function Community() {
 
   useEffect(() => {
     axios
-      .get(`http://louk342.iptime.org:3000/board/?page=${page}`)
-      .then(res => {
+      .get(`http://34.47.76.73:3000/board/?page=${page}`)
+      .then((res) => {
         console.log(res.data);
         setTotal(res.data);
         setBoard(res.data.contents);
       })
-      .catch(err => {
+      .catch((err) => {
         if (err.response.status == 404) {
           setBoard(null);
         }
@@ -41,7 +41,7 @@ function Community() {
         <div className={style.community}>
           <div className={style.contents}>
             {board ? (
-              board.map(item => (
+              board.map((item) => (
                 <a
                   className={style.a}
                   key={item.board_id}
