@@ -1,102 +1,85 @@
 /* 폰트와 글로벌 스타일 설정 */
 @font-face {
-    font-family: "SUITE-Regular";
-    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
+  font-family: "SUITE-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
 }
 
 html {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    font-family: "SUITE-Regular";
-}
-
-#container {
-    display: flex;
-    justify-content: center;
-}
-
-#content {
-    width: 782px;
-    height: 600px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin-left: 10px;
+  font-family: "SUITE-Regular";
 }
 
 .contentTitle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 35px;
-    margin-left: 35px;
-    font-size: 24px;
-    font-weight: 700;
-    color: #000000;
+  width: 100%;
+  text-align: left;
+  margin-top: 23px;
+  margin-left: 28px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
 }
 
 .plusBaby {
-    margin-top: 30px;
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 20px;
-    font-weight: 300;
-    color: #666662;
+  margin-top: 19px;
+  text-align: center;
+  margin-bottom: 49px;
+  font-size: 20px;
+  font-weight: 300;
+  color: #666662;
 }
 
 .babyList {
-    width: 100%;
-    height: 450px;
-    display: flex;
-    flex-wrap: wrap; /* Add this line to enable wrapping */
+  width: 100%;
+  height: 450px;
+  display: flex;
+  flex-wrap: wrap; /* Add this line to enable wrapping */
 }
 
 .BabyContainer {
-    width: 780px;
-    height: 450px;
+  width: 780px;
+  height: 450px;
 }
 
 .babyInfo {
-    text-align: center;
-    width: 25%;
-    height: 120px;
-    box-sizing: border-box;
+  text-align: center;
+  width: 25%;
+  height: 120px;
+  box-sizing: border-box;
 }
 
 .babyName {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 700;
-    color: #000000;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
 }
 
 .babyImgBox {
-    text-align: center;
+  text-align: center;
 }
 
 .babyImg {
-    width: 80px;
-    height: 80px;
+  width: 80px;
+  height: 80px;
 }
 
 .boy {
-    margin-top: 10px;
-    width: 70px;
-    height: 70px;
+  margin-top: 10px;
+  width: 70px;
+  height: 70px;
 }
 
 .babyBirth {
-    text-align: center;
-    margin-top: 5px;
-    font-size: 15px;
-    color: #bababa;
-    font-weight: 300;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 15px;
+  color: #bababa;
+  font-weight: 300;
 }
