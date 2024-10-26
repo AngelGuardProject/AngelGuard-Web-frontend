@@ -28,6 +28,7 @@ function MyInfo() {
           userId: userData.user_login_id,
           userNickname: userData.user_nickname,
         });
+        setNewNickname(userData.user_nickname); // 초기 닉네임 동기화
       })
       .catch((error) => {
         console.error("Error fetching user info:", error);
@@ -137,7 +138,7 @@ function MyInfo() {
             <input
               className={style.input}
               type="text"
-              value={newNickname || userInfo.userNickname}
+              value={newNickname}
               onChange={(e) => setNewNickname(e.target.value)}
             />
           </div>
