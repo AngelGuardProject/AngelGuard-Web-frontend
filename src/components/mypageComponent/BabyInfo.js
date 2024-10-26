@@ -12,7 +12,7 @@ function BabyInfo() {
 
   useEffect(() => {
     fetchBabies();
-  }, []);
+  }, [selectedBaby]);
 
   const fetchBabies = () => {
     axios
