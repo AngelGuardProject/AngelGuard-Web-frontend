@@ -29,12 +29,9 @@ const LikedPost = () => {
   }, [page, user_login_id]);
 
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <div className={style.contentTitle}>좋아요한 게시글</div>
-      <div className={style.totalLikedPosts}>
-        좋아요한 게시글 {totalPosts}
-      </div>{" "}
-      {/* totalPosts 상태 사용 */}
+      <div className={style.totalLikedPosts}>좋아요한 게시글 {totalPosts}</div>
       <div className={style.community}>
         <div className={style.contents}>
           {likedPosts.length > 0 ? (
