@@ -1,16 +1,20 @@
 .contentTitle {
-  margin-top: 35px;
-  margin-left: 35px;
+  width: 100%;
+  text-align: left;
+  margin-top: 22px;
+  margin-left: 38px;
   font-size: 24px;
   font-weight: 700;
   color: #000000;
 }
 .topInfoContainer {
   justify-content: space-between;
-  flex-direction: row;
+  display: flex;
+  margin-top: 13px;
 }
 
 .totalPosts {
+  margin-left: 38px;
   font-size: 15px;
   font-weight: 500;
   color: #8e857f;
@@ -20,6 +24,7 @@
   padding: 2px;
   width: 90px;
   height: 27px;
+  margin-right: 38px;
   text-align: center;
   font-weight: 700;
   font-size: 14px;
@@ -33,7 +38,7 @@
 }
 .community {
   height: 430px;
-  margin: auto;
+  margin: 19px 38px;
 }
 
 .listContents {

@@ -30,19 +30,20 @@ const MyPost = () => {
   }, [page, user_login_id]);
 
   return (
-    <div style={{ width: "90%" }}>
+    <div style={{ width: "100%" }}>
       <div className={style.contentTitle}>게시글 조회</div>
       <div className={style.topInfoContainer}>
-        <div className={style.totalPosts}>총 게시글 {totalPosts}</div>{" "}
-        {/* Use totalPosts state here */}
-        <button
-          onClick={() => {
-            navigate("/write");
-          }}
-          className={style.writeBtn}
-        >
-          작성하기
-        </button>
+        <div className={style.totalPosts}>총 게시글 {totalPosts}</div>
+        <div className={style.btn}>
+          <button
+            onClick={() => {
+              navigate("/write");
+            }}
+            className={style.writeBtn}
+          >
+            작성하기
+          </button>
+        </div>
       </div>
       <div className={style.community}>
         <div className={style.contents}>
