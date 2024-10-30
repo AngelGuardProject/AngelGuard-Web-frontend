@@ -70,6 +70,7 @@ function MyInfo() {
           alert("이미지가 업로드 되었습니다.");
           const imageUrl = res.data.result.user_image;
           setProfileImage(imageUrl);
+          window.location.reload();
         })
         .catch((error) => {
           console.error("Error uploading image:", error);
